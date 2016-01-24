@@ -1,0 +1,35 @@
+<div class="container">
+    <div class="row">
+    	<div class="input-field col s6">
+    		<div class="panel panel-default">
+			  	<div class="panel-heading">
+			    	<h3 class="panel-title">Login</h3>
+			 	</div>
+			  	<div class="panel-body">
+			    	<form accept-charset="UTF-8" role="form">
+                    <fieldset>
+			    	  	<div class="form-group">
+			    		    <input class="form-control" placeholder="E-mail" name="email" type="text">
+			    		</div>
+			    		<div class="form-group">
+			    			<input class="form-control" placeholder="Password" name="password" type="password" value="">
+			    		</div>
+			    		<input class="btn waves-light btn-large light-blue accent-1" type="submit" value="Login">
+			    	</fieldset>
+			      	</form>
+                      <hr/>
+                    <center><h4>OR</h4></center>
+
+                    <div class="input-group">
+						<span class="input-group-addon addon-facebook">
+							<i class="fa fa-fw fa-2x fa-facebook fa-fw"></i>
+						</span>
+						<a class="btn btn-lg btn-block btn-facebook blue darken-4" href="#"> Register with Facebook</a>
+					</div>
+					<%= link_to 'Login to Facebook', @auth_url, :class=>"button" %>
+			    </div>
+			</div>
+		</div>
+	</div>
+</div>
+
