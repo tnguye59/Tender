@@ -6,27 +6,21 @@
 			    	<h3 class="panel-title">Login</h3>
 			 	</div>
 			  	<div class="panel-body">
-			    	<form accept-charset="UTF-8" role="form">
-                    <fieldset>
+			    	<form>
+                    <fieldset class="z-depth-1">
 			    	  	<div class="form-group">
-			    		    <input class="form-control" placeholder="E-mail" name="email" type="text">
+			    	  		<i class="material-icons prefix">email</i>
+			    		    <input class="form-control validate" name="email" type="text" id="icon_prefix" placeholder="Email">
 			    		</div>
 			    		<div class="form-group">
-			    			<input class="form-control" placeholder="Password" name="password" type="password" value="">
+			    			<i class="material-icons prefix">lock</i>
+			    			<input class="form-control validate" placeholder="Password" name="password" type="password" id="icon_prefix">
 			    		</div>
 			    		<input class="btn waves-light btn-large light-blue accent-1" type="submit" value="Login">
 			    	</fieldset>
 			      	</form>
-                      <hr/>
-                    <center><h4>OR</h4></center>
-
-                    <div class="input-group">
-						<span class="input-group-addon addon-facebook">
-							<i class="fa fa-fw fa-2x fa-facebook fa-fw"></i>
-						</span>
-						<a class="btn btn-lg btn-block btn-facebook blue darken-4" href="#"> Register with Facebook</a>
-					</div>
-					<%= link_to 'Login to Facebook', @auth_url, :class=>"button" %>
+                    <h4>OR</h4>
+					<a class="btn btn-lrg blue darken-4 waves-effect waves-light" href="<%= @auth_url %>"> Log in with Facebook</a>
 			    </div>
 			</div>
 		</div>

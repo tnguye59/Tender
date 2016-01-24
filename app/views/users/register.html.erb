@@ -1,29 +1,37 @@
-<h2>Register</h2>
-
-<div class="row">
-    <form class="col s6">
-      <div class="row">
-        <div class="input-field col s6">
-          <input placeholder="Placeholder" id="first_name" type="text" class="validate">
-          <label for="first_name">First Name</label>
-        </div>
-        <div class="input-field col s6">
-          <input id="last_name" type="text" class="validate">
-          <label for="last_name">Last Name</label>
-        </div>
+<div class="containerRegister">
+    <div class="row">
+      <div class="input-field col s6">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">Register</h3>
+          </div>
+          <div class="panel-body">
+            <form>
+              <fieldset class="z-depth-1">
+              <div class="form-group">
+                <input class="form-control validate" name="first_name" type="text" placeholder="First Name">
+              </div>
+              <div class="form-group">
+                <input class="form-control validate" placeholder="Last Name" name="last_name" type="text">
+              </div>
+              <div class="form-group">
+                <input class="form-control validate" placeholder="Email" name="email" type="email">
+              </div>
+              <div class="form-group">
+                <input class="form-control validate" placeholder="Password" name="password" type="password">
+              </div>
+              <div class="form-group">
+                <input class="form-control validate" placeholder="Password" name="confirm_password" type="password">
+              </div>
+              <input class="btn waves-light btn-large light-blue accent-1" type="submit" value="Register">
+              </fieldset>
+            </form>
+            <a href="login">Already a memeber?</a>
+          </div>
       </div>
-      <div class="row">
-        <div class="input-field col s12">
-          <input id="password" type="password" class="validate">
-          <label for="password">Password</label>
-        </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s12">
-          <input id="email" type="email" class="validate">
-          <label for="email">Email</label>
-        </div>
-      </div>
-    </form>
+    </div>
   </div>
-  <a href="login">Already a memeber?</a>
+</div>
+
+
+ 

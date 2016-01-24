@@ -13,7 +13,7 @@
 	height: 300px;
 }
 
-.header {
+.header, i {
 	color: #80d8ff;
 	text-align: center;
 }
@@ -24,6 +24,16 @@
 a{
 	margin-right: 30px;
 }
-.container {
+.container{
 	text-align: center;
 }
+.input-group{
+	width: 320px;
+}
+.containerRegister {
+	text-align: center;
+	height: 500px;
+}
+
+
+
