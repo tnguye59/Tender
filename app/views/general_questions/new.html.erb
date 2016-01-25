@@ -1,0 +1,42 @@
+<div class="containerRegister">
+        <div class="input-field col s6">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">Here are some general questions for you and your match</h3>
+            </div>
+			<div class="panel-body">
+				<form action="/general" method="post">
+                	<input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+                	<input type="hidden" name="general_question[user_id]" value="<%= current_user.id%>">
+					<fieldset class="z-depth-1">
+						 <div class="form-group">
+						 	<p>
+						 		What city do you prefer your match to live in?
+						 		<input class="form-control validate" placeholder="Your matches city" name="general_question[city]" type="text"
+						 	</p>
+						 </div>
+						 <div class="form-group">
+						 	<p>
+						 		Do you prefer males or females? or both? 
+						 		<input class="form-control validate" placeholder="Your matches gender" name="general_question[gender]" type="text"
+						 	</p>
+						 </div>
+						 <div class="form-group">
+						 	<p>
+						 		What is the minimum age you prefer your match to be?
+						 		<input class="form-control validate" placeholder="Minimum Age" name="general_question[min_age]" type="text"
+						 	</p>
+						 </div>
+						  <div class="form-group">
+						 	<p>
+						 		What is the maximum age you prefer your match to be?
+						 		<input class="form-control validate" placeholder="Maximum Age" name="general_question[max_age]" type="text"
+						 	</p>
+						 </div>
+						<input class="btn waves-light btn-large light-blue accent-1" type="submit" value="Submit">
+					</fieldset>
+				</form>
+			</div>
+          </div>
+        </div>
+</div>
