@@ -16,7 +16,7 @@
               <h3 class="panel-title">Register</h3>
             </div>
             <div class="panel-body">
-              <form action="/users" method="post">
+              <form action="/users" method="post" enctype="multipart/form-data">
                 <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
                 <fieldset class="z-depth-1">
                 <div class="form-group">
@@ -57,7 +57,14 @@
                 <div class="form-group">
                   <input class="form-control validate" placeholder="Confirm Password" name="user[password_confirmation]" type="password">
                 </div>
-                 <input class="btn waves-light btn-large light-blue accent-1" type="submit" value="Register">
+                <div class="form-group">
+                  <p> 
+                    Profile Picture:
+                    <input class="form-control validate" placeholder="Upload Image" name="user[avatar]" type="file">
+                  </p>
+                </div>
+                
+                <input class="btn waves-light btn-large light-blue accent-1" type="submit" value="Register">
                 </fieldset>
               </form>
               <a href="login">Already a member?</a>
