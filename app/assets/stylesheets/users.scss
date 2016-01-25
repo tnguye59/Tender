@@ -6,7 +6,7 @@
   height: "your height here";
 }
 .section.white {
-	height: 610px;
+	height: 640px;
 }
 
 .section.white2 {
@@ -33,6 +33,21 @@ a{
 .containerRegister {
 	text-align: center;
 	height: 500px;
+}
+
+#card.col.s12.m7{
+	width: 200px;
+	height: 200px;
+	display: inline-block;
+	margin-right: 8px;
+}
+
+#card.col.s12.m7 img {
+	width: 177px;
+	height: 131px;
+}
+#cardlink{
+	color: #80d8ff;
 }
 
 

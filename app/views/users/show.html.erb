@@ -1,7 +1,7 @@
-<h4><a href="/logout">Log Out</a></h4>
+<p><a href="/logout">Log Out</a></p>
 
 <div id="profile">
-   <h3>Welcome to your profile page <h2><%= @profile["name"] %></h3>
+   <h3>Welcome to your profile page <%= @profile["name"] %></h3>
    <img src='https://graph.facebook.com/<%= @profile["id"] %>/picture' alt='picture'>
    <div class="profile_info"> 
       <h3>Facebook ID: <%= @profile["id"] %></h3>

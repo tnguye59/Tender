@@ -1,0 +1,66 @@
+/* line 5, /Users/azntommyboiz/Desktop/GitHub/ror_project/app/assets/stylesheets/users.scss */
+.parallax-container {
+  height: "your height here";
+}
+
+/* line 8, /Users/azntommyboiz/Desktop/GitHub/ror_project/app/assets/stylesheets/users.scss */
+.section.white {
+  height: 640px;
+}
+
+/* line 12, /Users/azntommyboiz/Desktop/GitHub/ror_project/app/assets/stylesheets/users.scss */
+.section.white2 {
+  height: 300px;
+}
+
+/* line 16, /Users/azntommyboiz/Desktop/GitHub/ror_project/app/assets/stylesheets/users.scss */
+.header, i {
+  color: #80d8ff;
+  text-align: center;
+}
+
+/* line 20, /Users/azntommyboiz/Desktop/GitHub/ror_project/app/assets/stylesheets/users.scss */
+#button, p {
+  text-align: center;
+  margin-top: 18px;
+}
+
+/* line 24, /Users/azntommyboiz/Desktop/GitHub/ror_project/app/assets/stylesheets/users.scss */
+a {
+  margin-right: 30px;
+}
+
+/* line 27, /Users/azntommyboiz/Desktop/GitHub/ror_project/app/assets/stylesheets/users.scss */
+.container {
+  text-align: center;
+}
+
+/* line 30, /Users/azntommyboiz/Desktop/GitHub/ror_project/app/assets/stylesheets/users.scss */
+.input-group {
+  width: 320px;
+}
+
+/* line 33, /Users/azntommyboiz/Desktop/GitHub/ror_project/app/assets/stylesheets/users.scss */
+.containerRegister {
+  text-align: center;
+  height: 500px;
+}
+
+/* line 38, /Users/azntommyboiz/Desktop/GitHub/ror_project/app/assets/stylesheets/users.scss */
+#card.col.s12.m7 {
+  width: 200px;
+  height: 200px;
+  display: inline-block;
+  margin-right: 8px;
+}
+
+/* line 45, /Users/azntommyboiz/Desktop/GitHub/ror_project/app/assets/stylesheets/users.scss */
+#card.col.s12.m7 img {
+  width: 177px;
+  height: 131px;
+}
+
+/* line 49, /Users/azntommyboiz/Desktop/GitHub/ror_project/app/assets/stylesheets/users.scss */
+#cardlink {
+  color: #80d8ff;
+}
