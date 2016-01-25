@@ -5,8 +5,8 @@ class User < ActiveRecord::Base
   has_many :messages
   EMAIL_REGEX = /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]+)\z/i
   validates :first_name, :last_name, :sex, presence: true, length: { in: 2..20 }
-  validates :email_address, presence: true, uniqueness: { case_sensitive: false }, format: { with: EMAIL_REGEX }
-  validates :age, numericality: true
+  validates :email, presence: true, uniqueness: { case_sensitive: false }, format: { with: EMAIL_REGEX }
+
 
   validates_each :birthday do |record, attr, value|
     record.errors.add attr, 'You need to be over 18 to use this website' if value > (18.years.ago).to_date
