@@ -9,7 +9,7 @@
 # On Windows:
 #   gem install pg
 #       Choose the win32 build.
-#       Install PostgreSQL and put its /bin directory on your path.
+#       Install PostgreSQL and put icdts /bin directory on your path.
 #
 # Configure Using Gemfile
 # gem 'pg'
@@ -20,6 +20,8 @@ default: &default
   # For details on connection pooling, see rails configuration guide
   # http://guides.rubyonrails.org/configuring.html#database-pooling
   pool: 5
+  username: postgres
+  password: password1
 
 development:
   <<: *default
@@ -81,5 +83,5 @@ test:
 production:
   <<: *default
   database: ror_project_production
-  username: Tomtom
-  password: <%= ENV['ROR_PROJECT_DATABASE_PASSWORD'] %>
+  username: postgres
+  password: password1

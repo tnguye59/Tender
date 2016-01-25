@@ -49,3 +49,4 @@ end
 gem 'hirb'
 gem 'rails-footnotes'
 
+gem 'tzinfo-data'
