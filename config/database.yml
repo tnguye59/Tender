@@ -85,3 +85,4 @@ production:
   database: ror_project_production
   username: postgres
   password: password1
+
