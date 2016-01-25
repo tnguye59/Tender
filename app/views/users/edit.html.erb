@@ -1,0 +1,79 @@
+<nav>
+<div class="nav-wrapper light-blue accent-1">
+  <div class="col s12">
+    <a href="/" class="breadcrumb">Home</a>
+  </div>
+</div>
+</nav>
+
+
+  <div class="containerRegister">
+      <div class="row">
+        <div class="input-field col s6">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">Register</h3>
+            </div>
+            <div class="panel-body">
+              <form action="/user/<%=user.id%>/edit" method="post" enctype="multipart/form-data">
+                <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+                <fieldset class="z-depth-1">
+                <div class="form-group">
+                  <input class="form-control validate" name="user[first_name]" type="text" value="<%= user.first_name %>">
+                </div>
+                <div class="form-group">
+                  <input class="form-control validate" value="<%=user.last_name%>" name="user[last_name]" type="text">
+                </div>
+                <div class="form-group">
+                  <input class="form-control validate" value="<%=user.email%>" name="user[email]" type="email">
+                </div>
+                <div class="form-group">
+                  <input class="form-control validate" value="<%=user.height%>" name="user[height]" type="number" step="any">
+                </div>
+                <div class="form-group">
+                  <input class="form-control validate" value="<%=user.nationality%>" name="user[nationality]" type="text">
+                </div>
+                <div class="form-group">
+                  <input class="form-control validate" value="<%=user.sex%>" name="user[sex]" type="text">
+                </div>
+                <div class="form-group">
+                  <input class="form-control validate" value="<%=user.city%>" name="user[city]" type="text">
+                </div>
+                <div class="form-group">
+                  <select name="user[state]">
+                    <% us_states.each do |state| %>
+                    <% if state = user.state%>
+                      <option value='<%= state %>' selected='<%= state%>'> <%= state %> 
+                      </option>
+                    <% end %>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <input class="form-control validate" value="<%=user.birthday%>" name="user[birthday]" type="date">
+                </div>
+                <div class="form-group">
+                  <input class="form-control validate" value="<%=user.password%>" name="user[password]" type="password">
+                </div>
+                <div class="form-group">
+                  <input class="form-control validate" value="<%=user.password_confirmation%>" name="user[password_confirmation]" type="password">
+                </div>
+                <div class="form-group">
+                  <p> 
+                    Profile Picture:
+                    <input class="form-control validate" value="<%=user.avatar%>" name="user[avatar]" type="file">
+                  </p>
+                </div>
+                <input type="hidden" name="_method" value="patch">
+                <input class="btn waves-light btn-large light-blue accent-1" type="submit" value="Edit">
+                </fieldset>
+              </form>
+            </div>
+            <a href="/personalquestions/<%=user.id%>/edit">Edit Your Personal Questions</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+ 
