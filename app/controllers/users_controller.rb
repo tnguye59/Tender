@@ -22,8 +22,10 @@ class UsersController < ApplicationController
  #    end
 	# end
 	
-	def register
-	end
+  def edit
+    user = User.find(params[:id])
+    render "edit"
+  end
 
 	# def show
 	# 	session[:oauth] = Koala::Facebook::OAuth.new(APP_ID, APP_SECRET, SITE_URL + '/user/show')
