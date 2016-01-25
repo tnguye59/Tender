@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'general_questions/new'
+
   get 'user_questions/new'
 
   root "users#index"
@@ -11,8 +13,13 @@ Rails.application.routes.draw do
    post "users" => "users#create"
   #Sessions
   get "logout" => "sessions#destroy"
-  #UserQuestions
-  get 'questions' => "user_questions#new"
+  #PersonalQuestions
+  get 'personal' => "personal_questions#new"
+  post 'personal'=> "personal_questions#create"
+  #GeneralQuestions
+  get 'general' => 'general_questions#new'
+  post 'general' => 'general_questions#create'
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
