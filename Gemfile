@@ -49,3 +49,6 @@ end
 gem 'hirb'
 gem 'rails-footnotes'
 
+gem 'tzinfo-data'
+
+gem "paperclip", "~> 4.2"

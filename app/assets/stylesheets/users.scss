@@ -50,5 +50,87 @@ a{
 	color: #80d8ff;
 }
 
+.border {
+  		border: 1px solid black;
+  	}
+.center {
+	text-align: center;
+}
+#user_photo {
+	height: 150px;
+	display: inline-block;
+	text-align: center;
+}
+#profile_info{
+	display: inline-block;
+	height: 150px;
+	text-align: center;
+	padding: 0px;
+}
+#matches {
+	width: 600px;
+	height: 240px;
+	border: 1px solid black;
+	margin: 20px auto;
+}
+.match {
+	display: inline-block;
+	width: 170px;
+	margin: 10px;
+	border: 1px solid black;
+}
+.answer{
+	vertical-align: top;
+	padding-left: 20px;
+}
+.match_photo{
+	width: 70px;
+	height: 70px;
+	border: 1px solid black;
+	margin: 10px 0px 0px 10px
+}
+#find_a_match{
+	border:1px solid black;
+	margin: 10px;
+	text-align: center;
+}
+#register_button{
+	border: 1px solid black;
+	width: 200px;
+	height: 50px;
+	margin: 10px auto;
+	text-align: center;
+}
+#match_question1, #match_question2, #match_question3{
+position: absolute;
+background: white;
+width: 30%;
+margin: 100px 35%;
+padding: 20px;
+z-index: 1500;
+display: none;
+top: 10px;
+}
+#match_question_background{
+position: fixed;
+width: 100%;
+height: 900px;
+top: 0;
+left: 0;
+background-color: #000;
+opacity: .8;
+z-index: 1000;
+display: none;
+}
+#close{
+width: 30px;
+height: 30px;
+border-radius: 50%;
+border: 1px solid #999;
+text-align: center;
+line-height: 30px;
+font-size: 30px;
+float: right;
+}
 
 
