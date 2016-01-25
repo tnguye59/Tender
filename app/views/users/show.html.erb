@@ -1,9 +1,194 @@
-<p><a href="/logout">Log Out</a></p>
-
-<div id="profile">
-   <h3>Welcome to your profile page <%= @profile["name"] %></h3>
-   <img src='https://graph.facebook.com/<%= @profile["id"] %>/picture' alt='picture'>
-   <div class="profile_info"> 
-      <h3>Facebook ID: <%= @profile["id"] %></h3>
+<div class="container">
+	<p><a href="/logout">Log Out</a></p>
+	<div class="profile_info"> 
+      <!-- <h3>Facebook ID: </h3>
+      <h3>Welcome to your profile page </h3> -->
    </div> 
+	<h3>DASHBOARD</h3>
+	<div class="row section">
+		<a href="/questions/show">
+			<img src="" alt="User Photo" id="user_photo" class="col s8 push-s2 m3 l3">
+			<!-- https://graph.facebook.com//picture -->
+		</a>
+		<div id="profile_info" class="col s12 m9 l9 border">
+			<!-- <div class="col-content border"> -->
+				<p>PROFILE INFO</p>
+				<p>PROFILE INFO</p>
+				<p>PROFILE INFO</p>
+			<!-- </div> -->
+		</div>
+	</div>
+	<div class="row">
+		<!-- FIRST MATCH -------------------->
+		<div class="col s12 m4 l4">
+			<div class="col-content border">
+				<a href="#" id="match1">
+					<img src="" alt="Match Photo" class="match_photo">
+				</a>
+				<ul class="answer collapsible" data-collapsible="accordion">
+					<li>
+						<div class="collapsible-header">
+							"First Question"
+						</div>
+						<div class="collapsible-body" style="display: none;"> 
+							<p>
+								This yout matches answer to your first question.
+							</p>
+						</div>
+					</li>
+					<li>
+						<div class="collapsible-header">
+							"Second Question"
+						</div>
+						<div class="collapsible-body" style="display: none;"> 
+							<p>
+								This yout matches answer to your second question.
+							</p>
+						</div>
+					</li>
+					<li>
+						<div class="collapsible-header">
+							"Third Question"
+						</div>
+						<div class="collapsible-body" style="display: none;"> 
+							<p>
+								This yout matches answer to your third question.
+							</p>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<!-- SECOND MATCH -->
+		<div class="col s12 m4 l4">
+			<div class="col-content border">
+				<a href="" id="match2">
+					<img src="" alt="Match Photo" class="match_photo">
+				</a>
+				<ul class="answer collapsible" data-collapsible="accordion">
+					<li>
+						<div class="collapsible-header">
+							"First Question"
+						</div>
+						<div class="collapsible-body" style="display: none;"> 
+							<p>
+								This yout matches answer to your first question.
+							</p>
+						</div>
+					</li>
+					<li>
+						<div class="collapsible-header">
+							"Second Question"
+						</div>
+						<div class="collapsible-body" style="display: none;"> 
+							<p>
+								This yout matches answer to your second question.
+							</p>
+						</div>
+					</li>
+					<li>
+						<div class="collapsible-header">
+							"Third Question"
+						</div>
+						<div class="collapsible-body" style="display: none;"> 
+							<p>
+								This yout matches answer to your third question.
+							</p>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<!-- THIRD MATCH -->
+		<div class="col s12 m4 l4">
+			<div class="col-content border">
+				<a href=""  id="match3">
+					<img src="" alt="Match Photo" class="match_photo">
+				</a>
+				<ul class="answer collapsible" data-collapsible="accordion">
+					<li>
+						<div class="collapsible-header">
+							"First Question"
+						</div>
+						<div class="collapsible-body" style="display: none;"> 
+							<p>
+								This yout matches answer to your first question.
+							</p>
+						</div>
+					</li>
+					<li>
+						<div class="collapsible-header">
+							"Second Question"
+						</div>
+						<div class="collapsible-body" style="display: none;"> 
+							<p>
+								This yout matches answer to your second question.
+							</p>
+						</div>
+					</li>
+					<li>
+						<div class="collapsible-header">
+							"Third Question"
+						</div>
+						<div class="collapsible-body" style="display: none;"> 
+							<p>
+								This yout matches answer to your third question.
+							</p>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<!-- FIND A MATCH BUTTON -->
+	<div class="row">
+		<div class="col s12 border">
+			<h4 class="center"><a href="/questions/match">FIND A MATCH!</a></h4>
+		</div>
+	</div>
+</div>
+
+	<!-- JQUERY DIVS -->
+<div id="match_question_background">
+</div>
+<div id="match_question1">
+	<h4>Match Questions</h4>
+	<form action="/user/show" method="post">
+		<input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+		Question 1: <input type="text" name="question1">
+		<br>
+		Question 2: <input type="text" name="question1">
+		<br>
+		Question 3: <input type="text" name="question1">
+		<br>
+		<input type="submit">
+	</form>
+</div>
+
+<div id="match_question2">
+	<h4>Match Questions</h4>
+	<form action="/user/show" method="post">
+		<input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+		Question 1: <input type="text" name="question1">
+		<br>
+		Question 2: <input type="text" name="question1">
+		<br>
+		Question 3: <input type="text" name="question1">
+		<br>
+		<input type="submit">
+	</form>
+</div>
+
+<div id="match_question3">
+	<h4>Match Questions</h4>
+	<form action="/user/show" method="post">
+		<input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+		Question 1: <input type="text" name="question1">
+		<br>
+		Question 2: <input type="text" name="question1">
+		<br>
+		Question 3: <input type="text" name="question1">
+		<br>
+		<input type="submit">
+	</form>
 </div>

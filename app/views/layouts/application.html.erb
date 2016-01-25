@@ -24,6 +24,30 @@ $(document).ready(function() {
 
     $('.parallax').parallax();
 
+     $('#match1').click(function(){
+        $("#match_question_background").fadeIn();
+        $("#match_question1").fadeIn();
+        return false;
+      });
+
+      $('#match2').click(function(){
+        $("#match_question_background").fadeIn();
+        $("#match_question2").fadeIn();
+        return false;
+      });
+
+      $('#match3').click(function(){
+        $("#match_question_background").fadeIn();
+        $("#match_question3").fadeIn();
+        return false;
+      });
+
+      $("#close").click(function(){
+        $("#this").fadeOut();
+        $("#this").fadeOut();
+        return false;
+      });
+
 });
 </script>
 </head>
