@@ -6,9 +6,12 @@ Rails.application.routes.draw do
   get "login" => "users#login"
   get "register" => "users#register"
   get "user" => "users#show"
-   post "users" => "users#create"
+  post "users" => "users#create"
   #Sessions
   get "logout" => "sessions#destroy"
+
+  #Chat
+  get 'chat' => "comments#chat"
  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

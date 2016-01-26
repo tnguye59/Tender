@@ -14,7 +14,7 @@ class UsersController < ApplicationController
   end 
 
 	def login
-		session[:oauth] = Koala::Facebook::OAuth.new(APP_ID, APP_SECRET, SITE_URL + '/user/show')
+		session[:oauth] = Koala::Facebook::OAuth.new(APP_ID, APP_SECRET, SITE_URL + '/user')
       @auth_url =  session[:oauth].url_for_oauth_code(:permissions=>"public_profile")  
       puts session.to_s + "<<< session"
       respond_to do |format|
@@ -26,7 +26,7 @@ class UsersController < ApplicationController
 	end
 
 	def show
-		session[:oauth] = Koala::Facebook::OAuth.new(APP_ID, APP_SECRET, SITE_URL + '/user/show')
+		session[:oauth] = Koala::Facebook::OAuth.new(APP_ID, APP_SECRET, SITE_URL + '/user')
     if params[:code]
        session[:access_token] = session[:oauth].get_access_token(params[:code])
     end      
