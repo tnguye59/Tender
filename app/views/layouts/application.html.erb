@@ -9,13 +9,54 @@
   <%= javascript_include_tag "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js" %>
   <%= stylesheet_link_tag "http://fonts.googleapis.com/icon?family=Material+Icons" %>
   <%= csrf_meta_tags %>
+
+<script type="text/javascript">
+$(document).ready(function() {
+    $('.datepicker').pickadate({
+    selectMonths: true, // Creates a dropdown to control month
+    selectYears: 15, // Creates a dropdown of 15 years to control year
+    format: 'yyyy-mm-dd' });
+
+    $('.parallax').parallax();
+
+     $('#match1').click(function(){
+        $("#match_question_background").fadeIn();
+        $("#match_question1").fadeIn();
+        return false;
+      });
+
+      $('#match2').click(function(){
+        $("#match_question_background").fadeIn();
+        $("#match_question2").fadeIn();
+        return false;
+      });
+
+      $('#match3').click(function(){
+        $("#match_question_background").fadeIn();
+        $("#match_question3").fadeIn();
+        return false;
+      });
+
+      $("#close").click(function(){
+        $("#this").fadeOut();
+        $("#this").fadeOut();
+        return false;
+      });
+
+     $('.slider').slider({full_width: true});
+
+});
+
+
+
+</script>
+
 </head>
 <body>
 <% if flash[:errors] %>
 <% flash[:errors].each do |error| %>
 <%= error %>
 <% end %> 
-<% end %>
 
 <% if flash[:msg] %>
 <%= flash[:msg] %>
