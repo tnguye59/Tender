@@ -1,3 +1,8 @@
+<% @match1 = 0 %>
+<% @match2 = 1 %>
+<% @match3 = 2 %>
+
+
 <div class="container">
 	<p><a href="/logout">Log Out</a></p>
 	<div class="profile_info"> 
@@ -6,10 +11,10 @@
    </div> 
 	<h3>DASHBOARD</h3>
 	<div class="row section">
-		<a href="/questions/show">
-			<img src="" alt="User Photo" id="user_photo" class="col s8 push-s2 m3 l3">
-			<!-- https://graph.facebook.com//picture -->
-		</a>
+		<!-- USER PHOTO -->
+		<img src="" alt="User Photo" id="user_photo" class="col s8 push-s2 m3 l3">
+		<!-- https://graph.facebook.com//picture -->
+		<!-- USER PROFILE INFO -->
 		<div id="profile_info" class="col s12 m9 l9 border">
 			<!-- <div class="col-content border"> -->
 				<p>PROFILE INFO</p>
@@ -20,11 +25,12 @@
 	</div>
 	<div class="row">
 		<!-- FIRST MATCH -------------------->
-		<div class="col s12 m4 l4">
+		<div class="col s12 m4 l4 match_card">
 			<div class="col-content border">
-				<a href="#" id="match1">
+				<a href="#">
 					<img src="" alt="Match Photo" class="match_photo">
 				</a>
+				<a href="" id="match1"><p class="answer_link">Answer your match's questions!</p></a>
 				<ul class="answer collapsible" data-collapsible="accordion">
 					<li>
 						<div class="collapsible-header">
@@ -57,14 +63,21 @@
 						</div>
 					</li>
 				</ul>
+				<% if @match1 != 2%> 
+				<a href=""><i class="small material-icons yes_vote">thumb_up</i></a>
+				<a href=""><i class="small material-icons no_vote">thumb_down</i></a>
+				<% else %>
+				<a href="" class="waves-effect waves-light btn open_chat"><i class="material-icons left">chat_bubble_outline</i>Open Chat</a>
+				<% end %>
 			</div>
 		</div>
 		<!-- SECOND MATCH -->
-		<div class="col s12 m4 l4">
+		<div class="col s12 m4 l4 match_card">
 			<div class="col-content border">
-				<a href="" id="match2">
+				<a href="">
 					<img src="" alt="Match Photo" class="match_photo">
 				</a>
+				<a href="" id="match2"><p class="answer_link">Answer your match's questions!</p></a>
 				<ul class="answer collapsible" data-collapsible="accordion">
 					<li>
 						<div class="collapsible-header">
@@ -97,14 +110,21 @@
 						</div>
 					</li>
 				</ul>
+				<% if @match2 != 2 %> 
+				<a href=""><i class="small material-icons yes_vote">thumb_up</i></a>
+				<a href=""><i class="small material-icons no_vote">thumb_down</i></a>
+				<% else %>
+				<a href="" class="waves-effect waves-light btn open_chat"><i class="material-icons left">chat_bubble_outline</i>Open Chat</a>
+				<% end %>
 			</div>
 		</div>
 		<!-- THIRD MATCH -->
-		<div class="col s12 m4 l4">
+		<div class="col s12 m4 l4 match_card">
 			<div class="col-content border">
-				<a href=""  id="match3">
+				<a href="">
 					<img src="" alt="Match Photo" class="match_photo">
 				</a>
+				<a href="" id="match3"><p class="answer_link">Answer your match's questions!</p></a>
 				<ul class="answer collapsible" data-collapsible="accordion">
 					<li>
 						<div class="collapsible-header">
@@ -137,15 +157,16 @@
 						</div>
 					</li>
 				</ul>
+				<% if @match3 != 2 %> 
+				<a href=""><i class="small material-icons yes_vote">thumb_up</i></a>
+				<a href=""><i class="small material-icons no_vote">thumb_down</i></a>
+				<% else %>
+				<a href="" class="waves-effect waves-light btn open_chat"><i class="material-icons left">chat_bubble_outline</i>Open Chat</a>
+				<% end %>
 			</div>
 		</div>
 	</div>
 	<!-- FIND A MATCH BUTTON -->
-	<div class="row">
-		<div class="col s12 border">
-			<h4 class="center"><a href="/questions/match">FIND A MATCH!</a></h4>
-		</div>
-	</div>
 </div>
 
 	<!-- JQUERY DIVS -->
