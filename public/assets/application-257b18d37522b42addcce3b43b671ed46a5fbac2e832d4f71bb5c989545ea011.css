@@ -1,0 +1,267 @@
+/* line 5, /Users/lamberdude/Desktop/coding_dojo/rails2/ROR-Project/app/assets/stylesheets/comments.scss */
+.chat {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* line 12, /Users/lamberdude/Desktop/coding_dojo/rails2/ROR-Project/app/assets/stylesheets/comments.scss */
+.chat li {
+  margin-bottom: 10px;
+  padding-bottom: 5px;
+  border-bottom: 1px dotted #B3A9A9;
+}
+
+/* line 19, /Users/lamberdude/Desktop/coding_dojo/rails2/ROR-Project/app/assets/stylesheets/comments.scss */
+.chat li.left .chat-body {
+  margin-left: 60px;
+}
+
+/* line 24, /Users/lamberdude/Desktop/coding_dojo/rails2/ROR-Project/app/assets/stylesheets/comments.scss */
+.chat li.right .chat-body {
+  margin-right: 60px;
+}
+
+/* line 30, /Users/lamberdude/Desktop/coding_dojo/rails2/ROR-Project/app/assets/stylesheets/comments.scss */
+.chat li .chat-body p {
+  margin: 0;
+  color: #777777;
+}
+
+/* line 36, /Users/lamberdude/Desktop/coding_dojo/rails2/ROR-Project/app/assets/stylesheets/comments.scss */
+.panel .slidedown .glyphicon, .chat .glyphicon {
+  margin-right: 5px;
+}
+/* line 5, /Users/lamberdude/Desktop/coding_dojo/rails2/ROR-Project/app/assets/stylesheets/users.scss */
+.parallax-container {
+  height: "your height here";
+}
+
+/* line 8, /Users/lamberdude/Desktop/coding_dojo/rails2/ROR-Project/app/assets/stylesheets/users.scss */
+.section.white {
+  height: 640px;
+}
+
+/* line 12, /Users/lamberdude/Desktop/coding_dojo/rails2/ROR-Project/app/assets/stylesheets/users.scss */
+.section.white2 {
+  height: 300px;
+}
+
+/* line 16, /Users/lamberdude/Desktop/coding_dojo/rails2/ROR-Project/app/assets/stylesheets/users.scss */
+.header, i {
+  color: #80d8ff;
+  text-align: center;
+}
+
+/* line 20, /Users/lamberdude/Desktop/coding_dojo/rails2/ROR-Project/app/assets/stylesheets/users.scss */
+#button, p {
+  text-align: center;
+  margin-top: 18px;
+}
+
+/* line 24, /Users/lamberdude/Desktop/coding_dojo/rails2/ROR-Project/app/assets/stylesheets/users.scss */
+a {
+  margin-right: 30px;
+}
+
+/* line 27, /Users/lamberdude/Desktop/coding_dojo/rails2/ROR-Project/app/assets/stylesheets/users.scss */
+.container {
+  text-align: center;
+}
+
+/* line 30, /Users/lamberdude/Desktop/coding_dojo/rails2/ROR-Project/app/assets/stylesheets/users.scss */
+.input-group {
+  width: 320px;
+}
+
+/* line 33, /Users/lamberdude/Desktop/coding_dojo/rails2/ROR-Project/app/assets/stylesheets/users.scss */
+.containerRegister {
+  text-align: center;
+  height: 500px;
+}
+
+/* line 38, /Users/lamberdude/Desktop/coding_dojo/rails2/ROR-Project/app/assets/stylesheets/users.scss */
+#card.col.s12.m7 {
+  width: 200px;
+  height: 200px;
+  display: inline-block;
+  margin-right: 8px;
+}
+
+/* line 45, /Users/lamberdude/Desktop/coding_dojo/rails2/ROR-Project/app/assets/stylesheets/users.scss */
+.card-image img {
+  width: 170px;
+  height: 155px;
+}
+
+/* line 49, /Users/lamberdude/Desktop/coding_dojo/rails2/ROR-Project/app/assets/stylesheets/users.scss */
+#cardlink {
+  color: #80d8ff;
+}
+
+/* line 53, /Users/lamberdude/Desktop/coding_dojo/rails2/ROR-Project/app/assets/stylesheets/users.scss */
+.border {
+  border: 1px solid black;
+}
+
+/* line 56, /Users/lamberdude/Desktop/coding_dojo/rails2/ROR-Project/app/assets/stylesheets/users.scss */
+.center {
+  text-align: center;
+}
+
+/* line 59, /Users/lamberdude/Desktop/coding_dojo/rails2/ROR-Project/app/assets/stylesheets/users.scss */
+#user_photo {
+  height: 150px;
+  display: inline-block;
+  text-align: center;
+  vertical-align: bottom;
+}
+
+/* line 66, /Users/lamberdude/Desktop/coding_dojo/rails2/ROR-Project/app/assets/stylesheets/users.scss */
+#profile_info {
+  display: inline-block;
+  height: 150px;
+  text-align: center;
+  padding: 0px;
+}
+
+/* line 73, /Users/lamberdude/Desktop/coding_dojo/rails2/ROR-Project/app/assets/stylesheets/users.scss */
+#matches {
+  width: 600px;
+  height: 240px;
+  border: 1px solid black;
+  margin: 20px auto;
+}
+
+/* line 80, /Users/lamberdude/Desktop/coding_dojo/rails2/ROR-Project/app/assets/stylesheets/users.scss */
+.match {
+  display: inline-block;
+  width: 170px;
+  margin: 10px;
+  border: 1px solid black;
+}
+
+/* line 87, /Users/lamberdude/Desktop/coding_dojo/rails2/ROR-Project/app/assets/stylesheets/users.scss */
+.answer {
+  vertical-align: top;
+  padding-left: 20px;
+}
+
+/* line 92, /Users/lamberdude/Desktop/coding_dojo/rails2/ROR-Project/app/assets/stylesheets/users.scss */
+.match_photo {
+  width: 70px;
+  height: 70px;
+  border: 1px solid black;
+  margin: 10px 0px 0px 10px;
+}
+
+/* line 99, /Users/lamberdude/Desktop/coding_dojo/rails2/ROR-Project/app/assets/stylesheets/users.scss */
+#find_a_match {
+  border: 1px solid black;
+  margin: 10px;
+  text-align: center;
+}
+
+/* line 105, /Users/lamberdude/Desktop/coding_dojo/rails2/ROR-Project/app/assets/stylesheets/users.scss */
+#register_button {
+  border: 1px solid black;
+  width: 200px;
+  height: 50px;
+  margin: 10px auto;
+  text-align: center;
+}
+
+/* line 113, /Users/lamberdude/Desktop/coding_dojo/rails2/ROR-Project/app/assets/stylesheets/users.scss */
+#match_question1, #match_question2, #match_question3 {
+  position: absolute;
+  background: white;
+  width: 30%;
+  margin: 100px 35%;
+  padding: 20px;
+  z-index: 1500;
+  display: none;
+  top: 10px;
+}
+
+/* line 124, /Users/lamberdude/Desktop/coding_dojo/rails2/ROR-Project/app/assets/stylesheets/users.scss */
+#match_question_background {
+  position: fixed;
+  width: 100%;
+  height: 900px;
+  top: 0;
+  left: 0;
+  background-color: #000;
+  opacity: .8;
+  z-index: 1000;
+  display: none;
+}
+
+/* line 136, /Users/lamberdude/Desktop/coding_dojo/rails2/ROR-Project/app/assets/stylesheets/users.scss */
+#close {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 1px solid #999;
+  text-align: center;
+  line-height: 30px;
+  font-size: 30px;
+  float: right;
+}
+
+/* line 146, /Users/lamberdude/Desktop/coding_dojo/rails2/ROR-Project/app/assets/stylesheets/users.scss */
+.match_card {
+  margin-top: 15px;
+}
+
+/* line 150, /Users/lamberdude/Desktop/coding_dojo/rails2/ROR-Project/app/assets/stylesheets/users.scss */
+.yes_vote {
+  position: relative;
+  color: green;
+  margin: 0 auto;
+}
+
+/* line 156, /Users/lamberdude/Desktop/coding_dojo/rails2/ROR-Project/app/assets/stylesheets/users.scss */
+.no_vote {
+  position: relative;
+  color: red;
+  margin: 0 auto;
+}
+
+/* line 162, /Users/lamberdude/Desktop/coding_dojo/rails2/ROR-Project/app/assets/stylesheets/users.scss */
+.open_chat {
+  width: 90%;
+  background-color: teal;
+  margin: 0 auto;
+  margin-bottom: 7px;
+}
+
+/* line 168, /Users/lamberdude/Desktop/coding_dojo/rails2/ROR-Project/app/assets/stylesheets/users.scss */
+.answer_link {
+  margin: 5px;
+}
+
+/* line 171, /Users/lamberdude/Desktop/coding_dojo/rails2/ROR-Project/app/assets/stylesheets/users.scss */
+.indicator-item.active {
+  background-color: #80d8ff;
+}
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+
+
+ */
+
+@import “materialize”;
+
+h3 {
+	color: #80d8ff;
+}
