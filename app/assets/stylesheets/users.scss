@@ -60,40 +60,48 @@ a{
 	height: 150px;
 	display: inline-block;
 	text-align: center;
+	vertical-align: bottom;
 }
+
 #profile_info{
 	display: inline-block;
 	height: 150px;
 	text-align: center;
 	padding: 0px;
 }
+
 #matches {
 	width: 600px;
 	height: 240px;
 	border: 1px solid black;
 	margin: 20px auto;
 }
+
 .match {
 	display: inline-block;
 	width: 170px;
 	margin: 10px;
 	border: 1px solid black;
 }
+
 .answer{
 	vertical-align: top;
 	padding-left: 20px;
 }
+
 .match_photo{
 	width: 70px;
 	height: 70px;
 	border: 1px solid black;
 	margin: 10px 0px 0px 10px
 }
+
 #find_a_match{
 	border:1px solid black;
 	margin: 10px;
 	text-align: center;
 }
+
 #register_button{
 	border: 1px solid black;
 	width: 200px;
@@ -101,6 +109,7 @@ a{
 	margin: 10px auto;
 	text-align: center;
 }
+
 #match_question1, #match_question2, #match_question3{
 position: absolute;
 background: white;
@@ -111,6 +120,7 @@ z-index: 1500;
 display: none;
 top: 10px;
 }
+
 #match_question_background{
 position: fixed;
 width: 100%;
@@ -122,6 +132,7 @@ opacity: .8;
 z-index: 1000;
 display: none;
 }
+
 #close{
 width: 30px;
 height: 30px;
@@ -131,6 +142,32 @@ text-align: center;
 line-height: 30px;
 font-size: 30px;
 float: right;
+}
+
+.match_card{
+	margin-top: 15px;
+}
+
+.yes_vote{
+	position: relative;
+	color: green;
+	margin: 0 auto;
+}
+
+.no_vote{
+	position: relative;
+	color: red;
+	margin: 0 auto;
+}
+
+.open_chat{
+	width: 90%;
+	background-color: teal;
+	margin: 0 auto;
+	margin-bottom: 7px;
+}
+.answer_link{
+	margin: 5px
 }
 
 
