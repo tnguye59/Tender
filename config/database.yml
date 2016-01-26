@@ -20,8 +20,8 @@ default: &default
   # For details on connection pooling, see rails configuration guide
   # http://guides.rubyonrails.org/configuring.html#database-pooling
   pool: 5
-  username: jessicapeng
-  password: 
+  username: postgres
+  password: password1
 
 development:
   <<: *default
@@ -83,7 +83,7 @@ test:
 production:
   <<: *default
   database: ror_project_production
-  username: jessicapeng
-  password: 
+  username: postgres
+  password: password1
 
 

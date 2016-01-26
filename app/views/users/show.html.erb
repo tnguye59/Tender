@@ -1,177 +1,239 @@
 <% @match1 = 0 %>
-<% @match2 = 1 %>
-<% @match3 = 2 %>
+<% @match2 = 2 %>
+<% @match3 = 0 %>
+<script type="text/javascript">
+$(document).ready(function() {
 
-<% if @match %>
-<%= @match.match_id %>
-<% end %>
+     $('#match1').click(function(){
+        $("#match_question_background").fadeIn();
+        $("#match_question1").fadeIn();
+        return false;
+      });
 
+      $('#match2').click(function(){
+        $("#match_question_background").fadeIn();
+        $("#match_question2").fadeIn();
+        return false;
+      });
+
+      $('#match3').click(function(){
+        $("#match_question_background").fadeIn();
+        $("#match_question3").fadeIn();
+        return false;
+      });
+
+      $("#close").click(function(){
+        $("#this").fadeOut();
+        $("#this").fadeOut();
+        return false;
+      });
+      $('.slider').slider({full_width: true});
+ });
+</script>
+<nav class="light-blue accent-1">
+	<div class="nav-wrapper">
+	  <a href="#" class="brand-logo center"></a>
+	  <ul id="nav-mobile" class="right">
+	    <li><a href="login">Logout</a></li>
+	  </ul>
+	</div>
+</nav>
 <div class="container">
-	<p><a href="/logout">Log Out</a></p>
-	<div class="profile_info"> 
-      <!-- <h3>Facebook ID: </h3>
-      <h3>Welcome to your profile page </h3> -->
-   </div> 
-
-	<h3>DASHBOARD</h3>
+    <div class="row">
+		<h3 class="left">Welcome, User!</h3>
+	</div>
 	<div class="row section">
 		<!-- USER PHOTO -->
 		<img src="" alt="User Photo" id="user_photo" class="col s8 push-s2 m3 l3">
-		<!-- https://graph.facebook.com//picture -->
 		<!-- USER PROFILE INFO -->
 		<div id="profile_info" class="col s12 m9 l9 border">
-			<!-- <div class="col-content border"> -->
-				<p>PROFILE INFO</p>
-				<p>PROFILE INFO</p>
-				<p>PROFILE INFO</p>
-			<!-- </div> -->
+			<a href="" class="waves-effect waves-light btn-large edit_button">Edit Your Profile</a>
+			<br>
+			<a href="" class="waves-effect waves-light btn-large edit_button">Edit Your Questions</a>
 		</div>
 	</div>
 	<div class="row">
 		<!-- FIRST MATCH -------------------->
-		<div class="col s12 m4 l4 match_card">
-			<div class="col-content border">
-				<a href="#">
-					<img src="" alt="Match Photo" class="match_photo">
-				</a>
-				<a href="" id="match1"><p class="answer_link">Answer your match's questions!</p></a>
-				<ul class="answer collapsible" data-collapsible="accordion">
-					<li>
-						<div class="collapsible-header">
-							"First Question"
-						</div>
-						<div class="collapsible-body" style="display: none;"> 
-							<p>
-								This yout matches answer to your first question.
-							</p>
-						</div>
-					</li>
-					<li>
-						<div class="collapsible-header">
-							"Second Question"
-						</div>
-						<div class="collapsible-body" style="display: none;"> 
-							<p>
-								This yout matches answer to your second question.
-							</p>
-						</div>
-					</li>
-					<li>
-						<div class="collapsible-header">
-							"Third Question"
-						</div>
-						<div class="collapsible-body" style="display: none;"> 
-							<p>
-								This yout matches answer to your third question.
-							</p>
-						</div>
-					</li>
-				</ul>
-				<% if @match1 != 2%> 
-				<a href=""><i class="small material-icons yes_vote">thumb_up</i></a>
-				<a href=""><i class="small material-icons no_vote">thumb_down</i></a>
-				<% else %>
-				<a href="" class="waves-effect waves-light btn open_chat"><i class="material-icons left">chat_bubble_outline</i>Open Chat</a>
-				<% end %>
-			</div>
+		<div class="col s12 m4 l4">
+			<div class="card">
+				<div class="card-image">
+		            <img src="images/sample-1.jpg" alt="Profile Image" class="border materialboxed">
+		            <span class="card-title">Card Title</span>
+	            </div>
+	            <div class="match-links">
+					<div class="match-link">
+						<a href="#" class="center_align">Profile</a>
+					</div>
+					<div class="match-link">
+						<a href="#" class="center_align">Questions</a>
+					</div>
+				</div>
+				<div class="match-content">
+					<ul class="answer collapsible" data-collapsible="accordion">
+						<li>
+							<div class="collapsible-header">
+								"First Question"
+							</div>
+							<div class="collapsible-body" style="display: none;"> 
+								<p>
+									This your matches answer to your first question.
+								</p>
+							</div>
+						</li>
+						<li>
+							<div class="collapsible-header">
+								"Second Question"
+							</div>
+							<div class="collapsible-body" style="display: none;"> 
+								<p>
+									This your matches answer to your second question.
+								</p>
+							</div>
+						</li>
+						<li>
+							<div class="collapsible-header">
+								"Third Question"
+							</div>
+							<div class="collapsible-body" style="display: none;"> 
+								<p>
+									This your matches answer to your third question.
+								</p>
+							</div>
+						</li>
+					</ul>
+					<% if @match1 != 2%> 
+					<a href=""><i class="small material-icons yes_vote">thumb_up</i></a>
+					<a href=""><i class="small material-icons no_vote">thumb_down</i></a>
+					<% else %>
+					<a href="" class="waves-effect waves-light btn open_chat"><i class="material-icons left">chat_bubble_outline</i>Open Chat</a>
+					<% end %>
+				</div>
+			</div>		
 		</div>
 		<!-- SECOND MATCH -->
-		<div class="col s12 m4 l4 match_card">
-			<div class="col-content border">
-				<a href="">
-					<img src="" alt="Match Photo" class="match_photo">
-				</a>
-				<a href="" id="match2"><p class="answer_link">Answer your match's questions!</p></a>
-				<ul class="answer collapsible" data-collapsible="accordion">
-					<li>
-						<div class="collapsible-header">
-							"First Question"
-						</div>
-						<div class="collapsible-body" style="display: none;"> 
-							<p>
-								This yout matches answer to your first question.
-							</p>
-						</div>
-					</li>
-					<li>
-						<div class="collapsible-header">
-							"Second Question"
-						</div>
-						<div class="collapsible-body" style="display: none;"> 
-							<p>
-								This yout matches answer to your second question.
-							</p>
-						</div>
-					</li>
-					<li>
-						<div class="collapsible-header">
-							"Third Question"
-						</div>
-						<div class="collapsible-body" style="display: none;"> 
-							<p>
-								This yout matches answer to your third question.
-							</p>
-						</div>
-					</li>
-				</ul>
-				<% if @match2 != 2 %> 
-				<a href=""><i class="small material-icons yes_vote">thumb_up</i></a>
-				<a href=""><i class="small material-icons no_vote">thumb_down</i></a>
-				<% else %>
-				<a href="" class="waves-effect waves-light btn open_chat"><i class="material-icons left">chat_bubble_outline</i>Open Chat</a>
-				<% end %>
-			</div>
+		<div class="col s12 m4 l4">
+			<div class="card">
+				<div class="card-image">
+		            <img src="images/sample-1.jpg" alt="Profile Image" class="border materialboxed">
+		            <span class="card-title">Card Title</span>
+	            </div>
+	            <div class="match-links">
+					<div class="match-link">
+						<a href="#" class="center_align">Profile</a>
+					</div>
+					<div class="match-link">
+						<a href="#" class="center_align">Questions</a>
+					</div>
+				</div>
+				<div class="match-content">
+					<ul class="answer collapsible" data-collapsible="accordion">
+						<li>
+							<div class="collapsible-header">
+								"First Question"
+							</div>
+							<div class="collapsible-body" style="display: none;"> 
+								<p>
+									This your matches answer to your first question.
+								</p>
+							</div>
+						</li>
+						<li>
+							<div class="collapsible-header">
+								"Second Question"
+							</div>
+							<div class="collapsible-body" style="display: none;"> 
+								<p>
+									This your matches answer to your second question.
+								</p>
+							</div>
+						</li>
+						<li>
+							<div class="collapsible-header">
+								"Third Question"
+							</div>
+							<div class="collapsible-body" style="display: none;"> 
+								<p>
+									This your matches answer to your third question.
+								</p>
+							</div>
+						</li>
+					</ul>
+					<% if @match2 != 2%> 
+					<a href=""><i class="small material-icons yes_vote">thumb_up</i></a>
+					<a href=""><i class="small material-icons no_vote">thumb_down</i></a>
+					<% else %>
+					<a href="" class="waves-effect waves-light btn open_chat"><i class="material-icons left">chat_bubble_outline</i>Open Chat</a>
+					<% end %>
+				</div>
+			</div>		
 		</div>
 		<!-- THIRD MATCH -->
-		<div class="col s12 m4 l4 match_card">
-			<div class="col-content border">
-				<a href="">
-					<img src="" alt="Match Photo" class="match_photo">
-				</a>
-				<a href="" id="match3"><p class="answer_link">Answer your match's questions!</p></a>
-				<ul class="answer collapsible" data-collapsible="accordion">
-					<li>
-						<div class="collapsible-header">
-							"First Question"
-						</div>
-						<div class="collapsible-body" style="display: none;"> 
-							<p>
-								This yout matches answer to your first question.
-							</p>
-						</div>
-					</li>
-					<li>
-						<div class="collapsible-header">
-							"Second Question"
-						</div>
-						<div class="collapsible-body" style="display: none;"> 
-							<p>
-								This yout matches answer to your second question.
-							</p>
-						</div>
-					</li>
-					<li>
-						<div class="collapsible-header">
-							"Third Question"
-						</div>
-						<div class="collapsible-body" style="display: none;"> 
-							<p>
-								This yout matches answer to your third question.
-							</p>
-						</div>
-					</li>
-				</ul>
-				<% if @match3 != 2 %> 
-				<a href=""><i class="small material-icons yes_vote">thumb_up</i></a>
-				<a href=""><i class="small material-icons no_vote">thumb_down</i></a>
-				<% else %>
-				<a href="" class="waves-effect waves-light btn open_chat"><i class="material-icons left">chat_bubble_outline</i>Open Chat</a>
-				<% end %>
-			</div>
+		<div class="col s12 m4 l4">
+			<div class="card">
+				<div class="card-image">
+		            <img src="images/sample-1.jpg" alt="Profile Image" class="border materialboxed">
+		            <span class="card-title">Card Title</span>
+	            </div>
+	            <div class="match-links">
+					<div class="match-link">
+						<a href="#" class="center_align">Profile</a>
+					</div>
+					<div class="match-link">
+						<a href="#" class="center_align">Questions</a>
+					</div>
+				</div>
+				<div class="match-content">
+					<ul class="answer collapsible" data-collapsible="accordion">
+						<li>
+							<div class="collapsible-header">
+								"First Question"
+							</div>
+							<div class="collapsible-body" style="display: none;"> 
+								<p>
+									This your matches answer to your first question.
+								</p>
+							</div>
+						</li>
+						<li>
+							<div class="collapsible-header">
+								"Second Question"
+							</div>
+							<div class="collapsible-body" style="display: none;"> 
+								<p>
+									This your matches answer to your second question.
+								</p>
+							</div>
+						</li>
+						<li>
+							<div class="collapsible-header">
+								"Third Question"
+							</div>
+							<div class="collapsible-body" style="display: none;"> 
+								<p>
+									This your matches answer to your third question.
+								</p>
+							</div>
+						</li>
+					</ul>
+					<% if @match3 != 2%> 
+					<a href=""><i class="small material-icons yes_vote">thumb_up</i></a>
+					<a href=""><i class="small material-icons no_vote">thumb_down</i></a>
+					<% else %>
+					<a href="" class="waves-effect waves-light btn open_chat"><i class="material-icons left">chat_bubble_outline</i>Open Chat</a>
+					<% end %>
+				</div>
+			</div>		
 		</div>
 	</div>
-	<!-- FIND A MATCH BUTTON -->
 </div>
+<footer class="page-footer light-blue accent-1">
+  <div class="footer-copyright">
+    <div class="container">
+    © 2016 Copyright Text
+    <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+    </div>
+  </div>
+</footer>
 
 	<!-- JQUERY DIVS -->
 <div id="match_question_background">
