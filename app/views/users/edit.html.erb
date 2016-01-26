@@ -1,7 +1,7 @@
 <nav>
   <div class="nav-wrapper light-blue accent-1">
     <div class="col s12">
-      <a href="/" class="breadcrumb">Home</a>
+      <a href="/user/<%= @user.id %>" class="breadcrumb">Home</a>
     </div>
   </div>
 </nav>
@@ -51,13 +51,29 @@
               <div class="form-group">
                 <p>
                   Sex:
-                <input class="form-control validate" value="<%=@user.sex%>" name="user[sex]" type="text">
+                  <select name="user[sex]">
+                    <% gender.each do |g| %>
+                    <% if @user.sex == g %>
+                    <option value="<%= g %>" selected><%= g %></option>
+                    <% else %>
+                    <option value="<%= g %>"><%= g %></option>
+                    <% end %>
+                    <% end %>
+                  </select>
               </p>
               </div>
               <div class="form-group">
                 <p>
                   City:
-                <input class="form-control validate" value="<%=@user.city%>" name="user[city]" type="text">
+                  <select name="user[city]">
+                    <% cities.each do |city| %>
+                    <% if city == @user.city %>
+                      <option value="<%= city %>" selected><%= city %></option>
+                    <% else %>
+                      <option value="<%= city %>"><%= city %></option>
+                    <% end %>
+                    <% end %>
+                  </select>
                 </p>
               </div>
               <div class="form-group">
@@ -65,9 +81,10 @@
                   State:
                 <select name="user[state]">
                   <% us_states.each do |state| %>
-                  <% if state = @user.state%>
-                    <option value='<%= state %>' selected='<%= state%>'> <%= state %> 
-                    </option>
+                  <% if state == @user.state%>
+                    <option value="<%= state %>" selected> <%= state %></option>
+                  <% else %>
+                    <option value="<%= state %>"><%= state %></option>
                   <% end %>
                   <% end %>
                 </select>
@@ -107,6 +124,8 @@
     </div>
   </div>
 
-
+  <script type="text/javascript">
+    $('select:not([multiple])').material_select();
+  </script>
 
  

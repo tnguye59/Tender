@@ -11,5 +11,15 @@ class ApplicationController < ActionController::Base
     ['AL','AK','AZ','AR','CA','CO','CT','DE','FL','GA','HI','ID','IL','IN','IA','KS','KY','LA','ME','MD','MA','MI','MN','MS','MO','MT','NE','NV','NH','NJ','NM','NY','NC','ND','OH','OK','OR','PA','RI','SC','SD','TN','TX','UT','VT','VA','WA','WV','WI','WY']
   end 
 
-  helper_method :current_user, :us_states
+  def cities
+    ['West Side', 'Central LA', 'South Bay', 'San Gabriel Valley', 'Orange County']
+  end 
+
+  def gender
+    ['Female', 'Male']
+  end 
+  helper_method :gender, :current_user, :us_states, :cities
+
+
+
 end

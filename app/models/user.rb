@@ -19,4 +19,9 @@ class User < ActiveRecord::Base
 	def not_matches
 		self.relationships.count == 0 ? User.where("id not in (?)", self.id) : User.where("id not in (?,?)", self.relationships.pluck(:match_id), (self.id))
 	end
+
+  def age(dob)
+    now = Time.now.utc.to_date
+    now.year - dob.year - ((now.month > dob.month || (now.month == dob.month && now.day >= dob.day)) ? 0 : 1)
+  end
 end

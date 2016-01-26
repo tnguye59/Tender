@@ -9,9 +9,9 @@ Rails.application.routes.draw do
   get "/" => "users#index"
   get "login" => "users#login"
   get "register" => "users#register"
-  get "user" => "users#show"
+  get "user/:id" => "users#show"
   post "users" => "users#create"
-
+  get "match/:id" => "users#match"
   get "users/:id/edit" => "users#edit"
   patch "users/:id/update" => "users#update"
   #Sessions
