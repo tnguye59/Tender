@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   get "register" => "users#register"
   get "user" => "users#show"
   post "users" => "users#create"
+
   get "users/:id/edit" => "users#edit"
   patch "users/:id/update" => "users#update"
   #Sessions
@@ -21,7 +22,10 @@ Rails.application.routes.draw do
   #GeneralQuestions
   get 'general' => 'general_questions#new'
   post 'general' => 'general_questions#create'
-  
+
+  #Chat
+  get 'chat' => "comments#chat"
+ 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
