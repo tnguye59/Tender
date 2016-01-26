@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   get "users/:id/edit" => "users#edit"
   patch "users/:id/update" => "users#update"
   #Sessions
+  post "session" => "sessions#create"
   get "logout" => "sessions#destroy"
   #PersonalQuestions
   get 'personal' => "personal_questions#new"

@@ -56,6 +56,9 @@ $(document).ready(function() {
 <% end %> 
 <% end %>
 
+<% if flash[:msg] %>
+<%= flash[:msg] %>
+<% end %> 
 
 <%= yield %>
 
