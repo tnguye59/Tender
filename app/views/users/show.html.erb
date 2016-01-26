@@ -2,6 +2,9 @@
 <% @match2 = 1 %>
 <% @match3 = 2 %>
 
+<% if @match %>
+<%= @match.match_id %>
+<% end %>
 
 <div class="container">
 	<p><a href="/logout">Log Out</a></p>

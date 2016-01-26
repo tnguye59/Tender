@@ -5,7 +5,7 @@ class GeneralQuestionsController < ApplicationController
   def create
   	general = GeneralQuestion.new(general_params)
   	if general.save
-  	   redirect_to '/user'
+  	   redirect_to "/match/#{general.user_id}"
   	else 
   		flash[:errors] = general.errors.full_messages
   	end 
