@@ -23,8 +23,18 @@ class UsersController < ApplicationController
 	# end
 	
   def edit
-    user = User.find(params[:id])
+    @user = User.find(params[:id])
     render "edit"
+  end
+
+  def update
+    u = User.find(params[:id])
+    if u.update(user_params)
+      redirect_to '/user'
+    else
+      flash[:errors] = u.errors.full_messages
+      redirect_to :back
+    end
   end
 
 	# def show
