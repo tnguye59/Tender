@@ -13,7 +13,7 @@
     <div class="slider">
       <ul class="slides">
       <li>
-        <img src="/assets/home.jpg"> <!-- random image -->
+        <%= image_tag "home.jpg" %>
         <div class="caption left-align">
           <h3>This can be your future together...</h3>
         <!--   <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5> -->
@@ -142,3 +142,8 @@
     </div>
   </div>
 </footer>
+
+<script>
+  $('.parallax').parallax();
+  $('.slider').slider({full_width: true});
+</script>  
