@@ -1,0 +1,37 @@
+<div class="containerRegister">
+        <div class="input-field col s6">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">Edit Your Questions for Potential Matches</h3>
+            </div>
+			<div class="panel-body">
+				<form action="/personal/<%=@question.user_id%>/edit" method="post" enctype="multipart/form-data">
+                	<input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+                	<input type="hidden" name="personal_question[user_id]" value="<%= @question.user_id%>">
+					<fieldset class="z-depth-1">
+						 <div class="form-group">
+						 	<p>
+						 		Question #1:
+						 		<input class="form-control validate" value="<%=@question.q1%>" name="personal_question[q1]" type="text"
+						 	</p>
+						 </div>
+						 <div class="form-group">
+						 	<p>
+						 		Question #2:
+						 		<input class="form-control validate" value="<%=@question.q1%>" name="personal_question[q2]" type="text"
+						 	</p>
+						 </div>
+						 <div class="form-group">
+						 	<p>
+						 		Question #3:
+						 		<input class="form-control validate" value="<%=@question.q3%>" name="personal_question[q3]" type="text"
+						 	</p>
+						 </div>
+						 <input type="hidden" name="_method" value="patch">
+						<input class="btn waves-light btn-large light-blue accent-1" type="submit" value="Submit">
+					</fieldset>
+				</form>
+			</div>
+          </div>
+        </div>
+</div>
