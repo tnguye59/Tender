@@ -47,22 +47,22 @@ $(document).ready(function() {
 
 });
 
-
-
 </script>
 
 </head>
 <body>
-<% if flash[:errors] %>
-<% flash[:errors].each do |error| %>
-<%= error %>
-<% end %> 
 
-<% if flash[:msg] %>
-<%= flash[:msg] %>
-<% end %> 
+  <% if flash[:errors] %>
+    <% flash[:errors].each do |error| %>
+    <%= error %>
+    <% end %> 
+  <% end %>
 
-<%= yield %>
+  <% if flash[:msg] %>
+    <%= flash[:msg] %>
+  <% end %> 
+
+  <%= yield %>
 
 </body>
 </html>
