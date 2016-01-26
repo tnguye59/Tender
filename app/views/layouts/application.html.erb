@@ -13,6 +13,8 @@
 <%= javascript_include_tag src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js" %>
 <%= javascript_include_tag src="js/materialize.min.js" %>
 
+
+
 <script type="text/javascript">
 $(document).ready(function() {
     $('select').material_select();
@@ -48,7 +50,11 @@ $(document).ready(function() {
         return false;
       });
 
+      $('.slider').slider({full_width: true});
 });
+
+
+
 </script>
 </head>
 <body>
