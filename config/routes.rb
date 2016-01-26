@@ -10,7 +10,9 @@ Rails.application.routes.draw do
   get "login" => "users#login"
   get "register" => "users#register"
   get "user" => "users#show"
-   post "users" => "users#create"
+  post "users" => "users#create"
+  get "users/:id/edit" => "users#edit"
+  patch "users/:id/update" => "users#update"
   #Sessions
   get "logout" => "sessions#destroy"
   #PersonalQuestions
