@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   get "match/:id" => "users#match"
   get "users/:id/edit" => "users#edit"
   patch "users/:id/update" => "users#update"
+  get "users/:id/profile" => "users#profile"
   #Sessions
   post "session" => "sessions#create"
   get "logout" => "sessions#destroy"
