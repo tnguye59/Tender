@@ -91,9 +91,10 @@ a{
 
 .match_photo{
 	width: 70px;
-	height: 70px;
+	height: 90%;
 	border: 1px solid black;
-	margin: 10px 0px 0px 10px
+	margin: 10px 0px 0px 10px;
+	display: inline-block;
 }
 
 #find_a_match{
@@ -168,4 +169,23 @@ float: right;
 .answer_link{
 	margin: 5px
 }
-
+.edit_button{
+	margin: 0 auto;
+	margin-top: 2%;
+	width: 90%;
+}
+.center_align{
+	margin: 0 auto;
+}
+.match-links{
+	padding: 5px;
+	color: teal;
+}
+.match-conent{
+	padding: 5px;
+}
+.match-link{
+	width: 40%;
+	margin: auto;
+	display: inline-block;
+}
