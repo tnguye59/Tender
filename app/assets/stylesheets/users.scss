@@ -42,9 +42,9 @@ a{
 	margin-right: 8px;
 }
 
-#card.col.s12.m7 img {
-	width: 177px;
-	height: 131px;
+.card-image img {
+	width: 170px;
+	height: 155px;
 }
 #cardlink{
 	color: #80d8ff;
@@ -168,4 +168,10 @@ float: right;
 .answer_link{
 	margin: 5px
 }
+.indicator-item.active {
+	background-color: #80d8ff;
+}
+
+
+
 
