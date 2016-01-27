@@ -1,13 +1,13 @@
 <nav>
   <div class="nav-wrapper light-blue accent-1">
     <div class="col s6">
-      <a href="/" class="breadcrumb">Home</a>
+      <a href="/user/<%= current_user.id %>" class="breadcrumb">Home</a>
       <a href="/users/<%= @question.user_id%>/edit" class="breadcrumb">Back</a>
     </div>
   </div>
 </nav>
 
-<div class="containerRegister">
+<div class="containerRegister container">
         <div class="input-field col s6">
           <div class="panel panel-default">
             <div class="panel-heading">

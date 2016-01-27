@@ -1,13 +1,16 @@
-<nav>
-  <div class="nav-wrapper light-blue accent-1">
-    <div class="col s12">
-      <a href="/user/<%= @user.id %>" class="breadcrumb">Home</a>
-    </div>
+
+<nav class="light-blue accent-1">
+  <div class="nav-wrapper">
+    <a href="/" class="brand-logo left">Tender</a> 
+    <ul id="nav-mobile" class="right hide-on-med-and-down" style="margin-left:1000px">
+      <li><a href="/user/<%= current_user.id %>">HOME</a></li>
+      <li><a href="logout">LOG OUT</a></li>
+    </ul>
   </div>
 </nav>
 
 
-  <div class="containerRegister">
+  <div class="containerRegister container">
     <div class="row">
       <div class="input-field col s6">
         <div class="panel panel-default">

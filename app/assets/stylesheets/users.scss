@@ -2,6 +2,22 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.card-content{
+	width: 212.5px;
+	height: 194px;
+}
+
+#card.col.s12.m3.card-panel.hoverable {
+	width: 230px;
+	height: 367px;
+	margin-right: 5px;
+
+.first_name {
+	font-weight:bold;
+	color:#B8B8B8 	;
+
+}
+
 .brand-logo.left {
 	font-family: 'Lobster', cursive;
 	font-size:73px;
