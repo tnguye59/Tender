@@ -58,6 +58,10 @@ $(document).ready(function() {
 			<a href="/personal/<%= @user.id %>/edit" class="waves-effect waves-light btn-large edit_button">Edit Your Questions</a>
 		</div>
 	</div>
+
+<% if flash[:answered] %>
+<%= flash[:answered] %>
+<% end %>
 	<h2>Your matches:</h2>
 	<div class="row">
 		<% if @matched_user %>
@@ -75,9 +79,11 @@ $(document).ready(function() {
 					<div class="match-link">
 						<a href="/users/<%= c.id %>/profile" class="center_align">Profile</a>
 					</div>
+					<% if c.answered(c.id, current_user.id) == false %>
 					<div class="match-link">
 						<a href="/questions/<%= c.id %>" class="center_align">Questions</a>
 					</div>
+					<% end %>
 				</div>
 			
 				<div class="match-content">

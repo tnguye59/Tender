@@ -31,4 +31,10 @@ class User < ActiveRecord::Base
     now = Time.now.utc.to_date
     now.year - dob.year - ((now.month > dob.month || (now.month == dob.month && now.day >= dob.day)) ? 0 : 1)
   end
+
+
+  def answered match_id, user_id
+     personal = PersonalQuestion.where(user_id: match_id).pluck(:id)[0]
+     Answer.where(personal_question_id:personal ,user_id:user_id).exists?
+  end
 end

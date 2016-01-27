@@ -15,27 +15,27 @@
     <div class="panel-body">
 				<form action="/answer"method="post" enctype="multipart/form-data">
                 	<input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
-                	<input type="hidden" name="answer[user_id]" value="<%= current_user.id %>">
+                	<input type="hidden" name="user_id" value="<%= current_user.id %>">
                 	<fieldset class="z-depth-1">
                    			<% if @questions %>
                 			<% @questions.each do |q| %>
-                	<input type="hidden" name="answer[personal_question_id]" value="<%= q.id %>">
+                	<input type="hidden" name="personal_question_id" value="<%= q.id %>">
                 		<div class="form-group">
                 			<p>
                 				<%= q.q1 %>
-                				<textarea name="answer[a1]"></textarea>
+                				<textarea name="a1"></textarea>
                 			</p>
                 		</div>
                 		<div class="form-group">
                 			<p>
                 				<%= q.q2 %>
-                				<textarea name="answer[a2]"></textarea>
+                				<textarea name="a2"></textarea>
                 			</p>
                 		</div>
                 		<div class="form-group">
                 			<p>
                 				<%= q.q3 %>
-                				<textarea name="answer[a3]"></textarea>
+                				<textarea name="a3"></textarea>
                 			</p>
                 		</div>
                 			<% end %>

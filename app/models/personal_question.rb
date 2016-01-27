@@ -15,4 +15,5 @@ class PersonalQuestion < ActiveRecord::Base
   def user_answer3 user_id
   	Answer.where(user_id: user_id).pluck(:a3)[0]
   end 
+
 end
