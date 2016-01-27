@@ -23,7 +23,6 @@ default: &default
   username: postgres
   password: password1
 
-
 development:
   <<: *default
   database: ror_project_development
