@@ -52,8 +52,7 @@ class UsersController < ApplicationController
   #   respond_to do |format|
   #      format.html {   }        
   #   end
-    @match = Match.where(user_id:params[:id]).limit(3)
-    @matched_user = User.find(params[:id]).matches
+    @matched_user = User.find(params[:id]).matches.limit(3)
     @user = User.find(params[:id])
 	end
 

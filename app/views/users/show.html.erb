@@ -1,12 +1,15 @@
 <% @match1 = 0 %>
 <% @match2 = 2 %>
 <% @match3 = 0 %>
-<% @matched_user.each do |c| %>
-<%= c.first_name %>
-<% end %>
+
 
 <script type="text/javascript">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js">
 $(document).ready(function() {
+	
+	   $('.collapsible').collapsible({
+	   });
 
      $('#match1').click(function(){
         $("#match_question_background").fadeIn();
@@ -51,28 +54,30 @@ $(document).ready(function() {
 	</div>
 	<div class="row section">
 		<!-- USER PHOTO -->
-		<img src=" http://placehold.it/350x150" alt="User Photo" id="user_photo" class="col s8 push-s2 m3 l3">
+		<img src="<%= @user.avatar.url %>" alt="User Photo" id="user_photo" class="col s8 push-s2 m3 l3">
 		<!-- USER PROFILE INFO -->
 		<div id="profile_info" class="col s12 m9 l9 border">
-			<a href="" class="waves-effect waves-light btn-large edit_button">Edit Your Profile</a>
+			<a href="/users/<%= @user.id %>/edit" class="waves-effect waves-light btn-large edit_button">Edit Your Profile</a>
 			<br>
-			<a href="" class="waves-effect waves-light btn-large edit_button">Edit Your Questions</a>
+			<a href="/personal/<%= @user.id %>/edit" class="waves-effect waves-light btn-large edit_button">Edit Your Questions</a>
 		</div>
 	</div>
+	<h2>Your matches:</h2>
 	<div class="row">
-		<!-- FIRST MATCH -------------------->
+		<% if @matched_user %>
+		<% @matched_user.each do |c| %>
 		<div class="col s12 m4 l4">
 			<div class="card">
 				<div class="card-image">
-		            <img src="http://placehold.it/350x150" alt="Profile Image" class="border materialboxed">
-		            <span class="card-title">Card Title</span>
+		            <img src="<%= c.avatar.url %>" alt="Profile Image" class="border materialboxed">
+		            <span class="card-title"><%= c.first_name %></span>
 	            </div>
 	            <div class="match-links">
 					<div class="match-link">
-						<a href="#" class="center_align">Profile</a>
+						<a href="/users/<%= c.id %>/profile" class="center_align">Profile</a>
 					</div>
 					<div class="match-link">
-						<a href="#" class="center_align">Questions</a>
+						<a href="/questions/<%= c.id %>" class="center_align">Questions</a>
 					</div>
 				</div>
 				<div class="match-content">
@@ -117,121 +122,9 @@ $(document).ready(function() {
 				</div>
 			</div>		
 		</div>
-		<!-- SECOND MATCH -->
-		<div class="col s12 m4 l4">
-			<div class="card">
-				<div class="card-image">
-		            <img src="images/sample-1.jpg" alt="Profile Image" class="border materialboxed">
-		            <span class="card-title">Card Title</span>
-	            </div>
-	            <div class="match-links">
-					<div class="match-link">
-						<a href="#" class="center_align">Profile</a>
-					</div>
-					<div class="match-link">
-						<a href="#" class="center_align">Questions</a>
-					</div>
-				</div>
-				<div class="match-content">
-					<ul class="answer collapsible" data-collapsible="accordion">
-						<li>
-							<div class="collapsible-header">
-								"First Question"
-							</div>
-							<div class="collapsible-body" style="display: none;"> 
-								<p>
-									This your matches answer to your first question.
-								</p>
-							</div>
-						</li>
-						<li>
-							<div class="collapsible-header">
-								"Second Question"
-							</div>
-							<div class="collapsible-body" style="display: none;"> 
-								<p>
-									This your matches answer to your second question.
-								</p>
-							</div>
-						</li>
-						<li>
-							<div class="collapsible-header">
-								"Third Question"
-							</div>
-							<div class="collapsible-body" style="display: none;"> 
-								<p>
-									This your matches answer to your third question.
-								</p>
-							</div>
-						</li>
-					</ul>
-					<% if @match2 != 2%> 
-					<a href=""><i class="small material-icons yes_vote">thumb_up</i></a>
-					<a href=""><i class="small material-icons no_vote">thumb_down</i></a>
-					<% else %>
-					<a href="" class="waves-effect waves-light btn open_chat"><i class="material-icons left">chat_bubble_outline</i>Open Chat</a>
-					<% end %>
-				</div>
-			</div>		
-		</div>
-		<!-- THIRD MATCH -->
-		<div class="col s12 m4 l4">
-			<div class="card">
-				<div class="card-image">
-		            <img src="images/sample-1.jpg" alt="Profile Image" class="border materialboxed">
-		            <span class="card-title">Card Title</span>
-	            </div>
-	            <div class="match-links">
-					<div class="match-link">
-						<a href="#" class="center_align">Profile</a>
-					</div>
-					<div class="match-link">
-						<a href="#" class="center_align">Questions</a>
-					</div>
-				</div>
-				<div class="match-content">
-					<ul class="answer collapsible" data-collapsible="accordion">
-						<li>
-							<div class="collapsible-header">
-								"First Question"
-							</div>
-							<div class="collapsible-body" style="display: none;"> 
-								<p>
-									This your matches answer to your first question.
-								</p>
-							</div>
-						</li>
-						<li>
-							<div class="collapsible-header">
-								"Second Question"
-							</div>
-							<div class="collapsible-body" style="display: none;"> 
-								<p>
-									This your matches answer to your second question.
-								</p>
-							</div>
-						</li>
-						<li>
-							<div class="collapsible-header">
-								"Third Question"
-							</div>
-							<div class="collapsible-body" style="display: none;"> 
-								<p>
-									This your matches answer to your third question.
-								</p>
-							</div>
-						</li>
-					</ul>
-					<% if @match3 != 2%> 
-					<a href=""><i class="small material-icons yes_vote">thumb_up</i></a>
-					<a href=""><i class="small material-icons no_vote">thumb_down</i></a>
-					<% else %>
-					<a href="" class="waves-effect waves-light btn open_chat"><i class="material-icons left">chat_bubble_outline</i>Open Chat</a>
-					<% end %>
-				</div>
-			</div>		
-		</div>
-	</div>
+		<% end %>
+		<% end %>
+	</div>				
 </div>
 <footer class="page-footer light-blue accent-1">
   <div class="footer-copyright">
@@ -286,3 +179,5 @@ $(document).ready(function() {
 		<input type="submit">
 	</form>
 </div>
+
+

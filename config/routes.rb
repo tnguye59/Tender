@@ -24,6 +24,7 @@ Rails.application.routes.draw do
   post 'personal'=> "personal_questions#create"
   get 'personal/:id/edit' => "personal_questions#edit"
   patch 'personal/:id/edit' => "personal_questions#update"
+  get 'questions/:id' => "personal_questions#show"
   #GeneralQuestions
   get 'general' => 'general_questions#new'
   post 'general' => 'general_questions#create'
