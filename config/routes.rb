@@ -16,9 +16,11 @@ Rails.application.routes.draw do
   patch "users/:id/update" => "users#update"
   get "users/:id/profile" => "users#profile"
   get "aboutus" => "users#aboutus"
+
   #Sessions
   post "session" => "sessions#create"
   get "logout" => "sessions#destroy"
+
   #PersonalQuestions
   get 'personal' => "personal_questions#new"
   post 'personal'=> "personal_questions#create"
@@ -26,6 +28,7 @@ Rails.application.routes.draw do
   patch 'personal/:id/edit' => "personal_questions#update"
   get 'questions/:id' => "personal_questions#show"
   post 'answer' => "personal_questions#createAnswer"
+  
   #GeneralQuestions
   get 'general' => 'general_questions#new'
   post 'general' => 'general_questions#create'
