@@ -52,6 +52,9 @@ class UsersController < ApplicationController
   #   respond_to do |format|
   #      format.html {   }        
   #   end
+    @questions = PersonalQuestion.where(user_id:params[:id])
+    question_id = @questions.pluck(:id)
+    @answers = Answer.where(personal_question_id: question_id)
     @matched_user = User.find(params[:id]).matches.limit(3)
     @user = User.find(params[:id])
 	end

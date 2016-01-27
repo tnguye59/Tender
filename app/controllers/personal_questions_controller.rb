@@ -32,8 +32,22 @@ class PersonalQuestionsController < ApplicationController
     @questions = PersonalQuestion.where(user_id:params[:id])
   end
 
+  def createAnswer
+    answer = Answer.new(answer_params)
+    if answer.save
+      redirect_to "/user/#{answer.user_id}"
+    else 
+      flash[:errors] = answer.errors.full_messages
+      redirect_to :back
+    end 
+  end
+
   private
   	def personal_params
   		params.require(:personal_question).permit(:q1,:q2,:q3, :user_id)
   	end
+
+    def answer_params
+      params.require(:answer).permit(:user_id, :personal_question_id, :a1, :a2, :a3)
+    end
 end

@@ -1,7 +1,7 @@
 
 <nav class="light-blue accent-1">
   <div class="nav-wrapper">
-    <a href="/" class="brand-logo left">Tender</a> 
+    <a href="/user/<%= current_user.id %>" class="brand-logo left">Tender</a> 
     <ul id="nav-mobile" class="right hide-on-med-and-down" style="margin-left:1000px">
       <li><a href="/user/<%= current_user.id %>">HOME</a></li>
       <li><a href="logout">LOG OUT</a></li>
@@ -15,54 +15,54 @@
       <div class="input-field col s6">
         <div class="panel panel-default">
           <div class="panel-heading">
-            <h3 class="panel-title">Your Profile</h3>
+            <h3 class="panel-title" style="font-family:Lobster, cursive">Your Profile</h3>
           </div>
           <div class="panel-body">
           	<%= image_tag @user.avatar.url %>
               <fieldset class="z-depth-1">
               <div class="form-group">
                 <p>
-                  First Name: <%= @user.first_name %>
+                  <b>First Name:</b> <%= @user.first_name %>
                 </p>
               </div>
               <div class="form-group">
                 <p>
-                  Last Name: <%= @user.last_name %>
+                  <b>Last Name:</b> <%= @user.last_name %>
                 </p>
               </div>
               <div class="form-group">
                 <p>
-                  Email: <%= @user.email %>
+                  <b>Email:</b> <%= @user.email %>
                 </p>
               </div>
               <div class="form-group">
                 <p>
-                  Height: <%= @user.height %>
+                  <b>Height:</b> <%= @user.height %>
                 </p>
               </div>
               <div class="form-group">
                 <p>
-                  Nationality: <%= @user.nationality %>
+                  <b>Nationality:</b> <%= @user.nationality %>
                 </p>
               </div>
               <div class="form-group">
                 <p>
-                  Sex: <%= @user.sex %>
+                 <b> Gender: </b> <%= @user.sex %>
                 </p>
               </div>
               <div class="form-group">
                 <p>
-                  City: <%= @user.city %>
+                  <b>City: </b> <%= @user.city %>
                  </p>
               </div>
               <div class="form-group">
                 <p>
-                  State: <%= @user.state %>
+                 <b> State: </b> <%= @user.state %>
                 </p>
               </div>
               <div class="form-group">
                 <p>
-                  Birthday: <%= @user.birthday %>
+                  <b> Birthday: </b> <%= @user.birthday %>
                 </p>
               </div>
               </fieldset>
