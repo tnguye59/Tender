@@ -31,6 +31,7 @@ class UsersController < ApplicationController
 	def show
     @questions = PersonalQuestion.where(user_id:params[:id])
     question_id = @questions.pluck(:id)
+    # @answers = Answer.all
     @answers = Answer.where(personal_question_id: question_id)
     @user = User.find(params[:id])
     @matched_user = User.find(params[:id]).matches.limit(3).distinct
