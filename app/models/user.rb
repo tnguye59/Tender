@@ -1,9 +1,10 @@
 class User < ActiveRecord::Base
   has_secure_password
+  has_many :GeneralQuestions, dependent: :destroy
   has_many :relationships, :class_name =>"Match", :foreign_key => "user_id" 
   has_many :matches, :through => :relationships
-  has_many :messages
-  has_many :personalquestions
+  has_many :messages, dependent: :destroy
+  has_many :PersonalQuestions, dependent: :destroy
   EMAIL_REGEX = /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]+)\z/i
   validates :first_name, :last_name, :sex, presence: true, length: { in: 2..20 }
   validates :email, presence: true, uniqueness: { case_sensitive: false }, format: { with: EMAIL_REGEX }
