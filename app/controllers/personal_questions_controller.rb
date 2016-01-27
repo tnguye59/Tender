@@ -20,7 +20,7 @@ class PersonalQuestionsController < ApplicationController
   def update
      q = PersonalQuestion.find_by(user_id: params[:id])
     if q.update(personal_params)
-      redirect_to '/user'
+      redirect_to "/user/#{params[:id]}"
     else
       flash[:errors] = q.errors.full_messages
       redirect_to :back

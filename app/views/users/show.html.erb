@@ -1,5 +1,5 @@
-<% @match1 = 2 %>
-<% @match2 = 2 %>
+<% @match1 = 0 %>
+<% @match2 = 0 %>
 <% @match3 = 0 %>
 <script type="text/javascript">
 $(document).ready(function() {
@@ -34,7 +34,7 @@ $(document).ready(function() {
       $('.slider').slider({full_width: true});
  });
 </script>
-
+<!-- HEADER -->
 <nav class="light-blue accent-1">
 	<div class="nav-wrapper">
 	  <a href="/" class="brand-logo left">Tender</a> 
@@ -43,7 +43,7 @@ $(document).ready(function() {
 	  </ul>
 	</div>
 </nav>
-
+<!-- BEGIN DASHBOARD -->
 <div class="container">
     <div class="row">
 		<h3 class="left">Welcome, <%= @user.first_name %>!</h3>
@@ -53,9 +53,9 @@ $(document).ready(function() {
 		<img src="<%= @user.avatar.url %>" alt="User Photo" id="user_photo" class="col s8 push-s2 m3 l3">
 		<!-- USER PROFILE INFO -->
 		<div id="profile_info" class="col s12 m9 l9 border">
-			<a href="/users/<%= @user.id %>/edit" class="waves-effect waves-light btn-large edit_button">Edit Your Profile</a>
+			<a href="/users/<%= @user.id %>/edit" class="waves-effect waves-light btn-large edit_button light-blue accent-1">Edit Your Profile</a>
 			<br>
-			<a href="/personal/<%= @user.id %>/edit" class="waves-effect waves-light btn-large edit_button">Edit Your Questions</a>
+			<a href="/personal/<%= @user.id %>/edit" class="waves-effect waves-light btn-large edit_button light-blue accent-1">Edit Your Questions</a>
 		</div>
 	</div>
 
@@ -131,7 +131,9 @@ $(document).ready(function() {
 					<a href=""><i class="small material-icons yes_vote">thumb_up</i></a>
 					<a href=""><i class="small material-icons no_vote">thumb_down</i></a>
 					<% else %>
-					<a href="" class="waves-effect waves-light btn open_chat"><i class="material-icons left">chat_bubble_outline</i>Open Chat</a>
+					<div>
+						<a href="" class="waves-effect waves-light btn open_chat btn-border white"><i class="material-icons left">chat_bubble_outline</i><span class="light-blue-text accent-1">Open Chat</span></a>
+					</div>
 					<% end %>
 
 				</div>
