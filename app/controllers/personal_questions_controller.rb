@@ -27,6 +27,11 @@ class PersonalQuestionsController < ApplicationController
     end
   end
 
+  def show 
+    @user = User.find(params[:id])
+    @questions = PersonalQuestion.where(user_id:params[:id])
+  end
+
   private
   	def personal_params
   		params.require(:personal_question).permit(:q1,:q2,:q3, :user_id)
