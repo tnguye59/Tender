@@ -52,23 +52,23 @@ class UsersController < ApplicationController
   #   respond_to do |format|
   #      format.html {   }        
   #   end
-    @matched_user = User.find(params[:id]).matches.limit(3)
+    @matched_user = User.find(params[:id]).matches.limit(3).distinct
     @user = User.find(params[:id])
 	end
 
   def match
     user = GeneralQuestion.find_by(user_id:params[:id])
-    candidates = User.where.not(id:params[:id]) 
-    previous = Match.where.not(user_id: params[:id])
+    candidates = User.all 
     candidates.each do |c| 
-      if user.gender == c.sex  && 
-        user.max_age > c.age(c.birthday) &&
-        user.min_age < c.age(c.birthday) && user.city == c.city 
-        match = Match.create(user_id: user.user_id, match_id: c.id)
-      else 
-        flash[:msg] = "You have no matches!"
+      if Match.where(match_id: c.id, user_id:params[:id]).exists?
+      else
+        if user.gender == c.sex  && 
+          user.max_age > c.age(c.birthday) &&
+          user.min_age < c.age(c.birthday) && user.city == c.city 
+          match = Match.create(user_id: user.user_id, match_id: c.id)
+        end
       end
-      end
+    end
     redirect_to "/user/#{user.user_id}"
   end
 

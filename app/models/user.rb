@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
   has_many :messages, dependent: :destroy
   has_many :PersonalQuestions, dependent: :destroy
   EMAIL_REGEX = /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]+)\z/i
-  validates :first_name, :last_name, :sex, presence: true, length: { in: 2..20 }
+  validates :first_name, :last_name, :sex, presence: true
   validates :email, presence: true, uniqueness: { case_sensitive: false }, format: { with: EMAIL_REGEX }
 
   # validates :birthday, presence: true
@@ -23,7 +23,7 @@ class User < ActiveRecord::Base
     end
   end
 
-	def not_matches
+	def self_notmatches
 		self.relationships.count == 0 ? User.where("id not in (?)", self.id) : User.where("id not in (?,?)", self.relationships.pluck(:match_id), (self.id))
 	end
 
