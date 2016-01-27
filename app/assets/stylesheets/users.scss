@@ -36,9 +36,7 @@
 a{
 	margin-right: 30px;
 }
-.container{
-	text-align: center;
-}
+
 .input-group{
 	width: 320px;
 }
@@ -91,6 +89,7 @@ a{
 .answer{
 	vertical-align: top;
 	padding-left: 20px;
+	text-align: center;
 }
 
 .match_photo{
@@ -188,9 +187,11 @@ float: right;
 .match-links{
 	padding: 5px;
 	color: teal;
+	text-align: center;
 }
 .match-conent{
 	padding: 5px;
+	text-align: center;
 }
 .match-link{
 	width: 40%;
