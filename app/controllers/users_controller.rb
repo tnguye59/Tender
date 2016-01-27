@@ -59,6 +59,7 @@ class UsersController < ApplicationController
   def match
     user = GeneralQuestion.find_by(user_id:params[:id])
     candidates = User.where.not(id:params[:id]) 
+    previous = Match.where.not(user_id: params[:id])
     candidates.each do |c| 
       if user.gender == c.sex  && 
         user.max_age > c.age(c.birthday) &&
