@@ -30,7 +30,6 @@ $(document).ready(function() {
         $("#match_question2").fadeIn();
         return false;
       });
-
       $('#match3').click(function(){
         $("#match_question_background").fadeIn();
         $("#match_question3").fadeIn();
@@ -44,7 +43,6 @@ $(document).ready(function() {
       });
 
      $('.slider').slider({full_width: true});
-
 });
 
 </script>
@@ -54,8 +52,8 @@ $(document).ready(function() {
 
   <% if flash[:errors] %>
     <% flash[:errors].each do |error| %>
-    <%= error %>
-    <% end %> 
+   <p> <%= error %></p>
+     <% end %> 
   <% end %>
 
   <% if flash[:msg] %>
