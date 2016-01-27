@@ -52,7 +52,9 @@ class UsersController < ApplicationController
   #   respond_to do |format|
   #      format.html {   }        
   #   end
-    @match = Match.find_by(user_id:params[:id])
+    @match = Match.where(user_id:params[:id]).limit(3)
+    @matched_user = User.find(params[:id]).matches
+    @user = User.find(params[:id])
 	end
 
   def match
@@ -63,7 +65,6 @@ class UsersController < ApplicationController
         user.max_age > c.age(c.birthday) &&
         user.min_age < c.age(c.birthday) && user.city == c.city 
         match = Match.create(user_id: user.user_id, match_id: c.id)
-        flash[:msg] = "if statement"
       else 
         flash[:msg] = "You have no matches!"
       end

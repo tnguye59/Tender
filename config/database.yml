@@ -21,8 +21,8 @@ default: &default
   # http://guides.rubyonrails.org/configuring.html#database-pooling
   pool: 5
 
-  username: 
-  password: 
+  username: postgres
+  password: password1
 
 development:
   <<: *default
@@ -85,8 +85,8 @@ production:
   <<: *default
   database: ror_project_production
 
-  username: 
-  password: 
+  username: postgres
+  password: password1
 
 
 

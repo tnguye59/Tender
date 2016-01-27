@@ -1,6 +1,10 @@
 <% @match1 = 0 %>
 <% @match2 = 2 %>
 <% @match3 = 0 %>
+<% @matched_user.each do |c| %>
+<%= c.first_name %>
+<% end %>
+
 <script type="text/javascript">
 $(document).ready(function() {
 
@@ -34,17 +38,17 @@ $(document).ready(function() {
 	<div class="nav-wrapper">
 	  <a href="#" class="brand-logo center"></a>
 	  <ul id="nav-mobile" class="right">
-	    <li><a href="login">Logout</a></li>
+	    <li><a href="/logout">Logout</a></li>
 	  </ul>
 	</div>
 </nav>
 <div class="container">
     <div class="row">
-		<h3 class="left">Welcome, User!</h3>
+		<h3 class="left">Welcome, <%= @user.first_name %>!</h3>
 	</div>
 	<div class="row section">
 		<!-- USER PHOTO -->
-		<img src="" alt="User Photo" id="user_photo" class="col s8 push-s2 m3 l3">
+		<img src=" http://placehold.it/350x150" alt="User Photo" id="user_photo" class="col s8 push-s2 m3 l3">
 		<!-- USER PROFILE INFO -->
 		<div id="profile_info" class="col s12 m9 l9 border">
 			<a href="" class="waves-effect waves-light btn-large edit_button">Edit Your Profile</a>
@@ -57,7 +61,7 @@ $(document).ready(function() {
 		<div class="col s12 m4 l4">
 			<div class="card">
 				<div class="card-image">
-		            <img src="images/sample-1.jpg" alt="Profile Image" class="border materialboxed">
+		            <img src="http://placehold.it/350x150" alt="Profile Image" class="border materialboxed">
 		            <span class="card-title">Card Title</span>
 	            </div>
 	            <div class="match-links">
