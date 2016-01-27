@@ -18,7 +18,7 @@ Rails.application.routes.draw do
   get "aboutus" => "users#aboutus"
   #Sessions
   post "session" => "sessions#create"
-  get "/logout" => "sessions#destroy"
+  get "logout" => "sessions#destroy"
   #PersonalQuestions
   get 'personal' => "personal_questions#new"
   post 'personal'=> "personal_questions#create"
