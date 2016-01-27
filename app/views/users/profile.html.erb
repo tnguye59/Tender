@@ -3,8 +3,8 @@
   <div class="nav-wrapper">
     <a href="/user/<%= current_user.id %>" class="brand-logo left">Tender</a> 
     <ul id="nav-mobile" class="right hide-on-med-and-down" style="margin-left:1000px">
-      <li><a href="/user/<%= current_user.id %>">HOME</a></li>
-      <li><a href="logout">LOG OUT</a></li>
+      <li><a href="/">HOME</a></li>
+      <li><a href="/logout">LOG OUT</a></li>
     </ul>
   </div>
 </nav>
@@ -37,7 +37,11 @@
               </div>
               <div class="form-group">
                 <p>
+<<<<<<< HEAD
                   <b>Height:</b> <%= @user.height %>
+=======
+                  Height: <%= @user.height %> in.
+>>>>>>> 13395cdc61f498974f1b05e171c5f709b1424604
                 </p>
               </div>
               <div class="form-group">

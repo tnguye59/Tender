@@ -2,6 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
 .card-content{
 	width: 212.5px;
 	height: 194px;
@@ -12,6 +13,7 @@
 	height: 367px;
 	margin-right: 5px;
 }
+
 
 .first_name {
 	font-weight:bold;
@@ -40,16 +42,14 @@
 	color: #80d8ff;
 	text-align: center;
 }
-#button, p {
+#button{
 	text-align: center;
 	margin-top: 18px;
 }
 a{
 	margin-right: 30px;
 }
-.container{
-	text-align: center;
-}
+
 .input-group{
 	width: 320px;
 }
@@ -57,14 +57,6 @@ a{
 	text-align: center;
 	height: 500px;
 }
-
-#card.col.s12.m7{
-	width: 200px;
-	height: 200px;
-	display: inline-block;
-	margin-right: 8px;
-}
-
 .card-image img {
 	width: 170px;
 	height: 155px;
@@ -110,6 +102,7 @@ a{
 .answer{
 	vertical-align: top;
 	padding-left: 20px;
+	text-align: center;
 }
 
 .match_photo{
@@ -207,9 +200,11 @@ float: right;
 .match-links{
 	padding: 5px;
 	color: teal;
+	text-align: center;
 }
 .match-conent{
 	padding: 5px;
+	text-align: center;
 }
 .match-link{
 	width: 40%;

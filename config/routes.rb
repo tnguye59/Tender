@@ -18,7 +18,7 @@ Rails.application.routes.draw do
   get "aboutus" => "users#aboutus"
   #Sessions
   post "session" => "sessions#create"
-  get "logout" => "sessions#destroy"
+  get "/logout" => "sessions#destroy"
   #PersonalQuestions
   get 'personal' => "personal_questions#new"
   post 'personal'=> "personal_questions#create"
@@ -32,6 +32,11 @@ Rails.application.routes.draw do
 
   #Chat
   get 'chat' => "comments#chat"
+
+  #Omniauth
+  get 'auth/facebook/callback' => "sessions#create_omni"
+  get '/register/omniauth' => "omniauths#register"
+  post '/omniauths' => "omniauths#create"
  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

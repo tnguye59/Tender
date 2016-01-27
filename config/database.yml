@@ -21,7 +21,11 @@ default: &default
   # http://guides.rubyonrails.org/configuring.html#database-pooling
   pool: 5
 
+<<<<<<< HEAD
   username: jessicapeng
+=======
+  username: Tomtom
+>>>>>>> 13395cdc61f498974f1b05e171c5f709b1424604
   password: 
 
 development:
@@ -85,8 +89,13 @@ production:
   <<: *default
   database: ror_project_production
 
+<<<<<<< HEAD
   username: jessicapeng
   password: password1
+=======
+  username: Tomtom
+  password: 
+>>>>>>> 13395cdc61f498974f1b05e171c5f709b1424604
 
 
 
