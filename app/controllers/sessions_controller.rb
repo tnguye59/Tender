@@ -3,7 +3,7 @@ class SessionsController < ApplicationController
 		user = User.find_by(email: params[:email])
 		if user && user.authenticate(params[:password])
 			session[:user_id] = user.id
-			redirect_to "/user/#{user.id}"
+			redirect_to "/match/#{user.id}"
 		else
 			flash[:msg] = "Invalid Email/Password Combination"
 			redirect_to :back
@@ -11,8 +11,7 @@ class SessionsController < ApplicationController
 	end
 	
 	def destroy
-		session[:user_id] = nil
-  		session[:success] = true
+		session.clear
   		redirect_to '/'
   	end
 end
