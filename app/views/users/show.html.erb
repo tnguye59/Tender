@@ -38,9 +38,9 @@ $(document).ready(function() {
 <nav class="light-blue accent-1">
 	<div class="nav-wrapper">
 	  <a href="/" class="brand-logo left">Tender</a> 
-	  <ul id="nav-mobile" class="right hide-on-med-and-down" style="margin-left:1000px">
+	  <ul id="nav-mobile" class="right">
 	    <li><a href="/logout">LOG OUT</a></li>
-	    <li>Signed in as: <%= @user.first_name %></li>
+	    <span class="hide-on-med-and-down"><li>Signed in as: <%= @user.first_name %></li></span>
 	  </ul>
 	</div>
 </nav>
