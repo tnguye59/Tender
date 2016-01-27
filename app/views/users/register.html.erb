@@ -1,18 +1,19 @@
-<nav>
-<div class="nav-wrapper light-blue accent-1">
-  <div class="col s12">
-    <a href="/" class="breadcrumb">Home</a>
-    <a href="login" class="breadcrumb">Login</a>
+<nav class="light-blue accent-1">
+  <div class="nav-wrapper">
+    <a href="/" class="brand-logo left">Tender</a> 
+    <ul id="nav-mobile" class="right hide-on-med-and-down" style="margin-left:1000px">
+      <li><a href="register">REGISTER</a></li>
+      <li><a href="/">HOME</a></li>
+    </ul>
   </div>
-</div>
 </nav>
 
-
+<div class="container">
   <div class="containerRegister">
       <div class="row">
-        <div class="input-field col s6">
-          <div class="panel panel-default">
-            <div class="panel-heading">
+        <div class="input-field col s6 ">
+          <!-- <div class="panel panel-default"> -->
+            <div class="panel-heading ">
               <h3 class="panel-title">Register</h3>
             </div>
             <div class="panel-body">
@@ -81,9 +82,10 @@
               </form>
               <a href="login">Already a member?</a>
             </div>
-        </div>
+        <!-- </div> -->
       </div>
     </div>
+  </div>
   </div>
   <script type="text/javascript">
     $('select:not([multiple])').material_select();
