@@ -29,8 +29,13 @@ class UsersController < ApplicationController
   end
 
 	def show
+    @questions = PersonalQuestion.where(user_id:params[:id])
+    question_id = @questions.pluck(:id)
+    @answers = Answer.where(personal_question_id: question_id)
+    @user = User.find(params[:id])
     @matched_user = User.find(params[:id]).matches.limit(3).distinct
     @match = Match.where(user_id:params[:id]).limit(3)
+
 	end
 
   def match

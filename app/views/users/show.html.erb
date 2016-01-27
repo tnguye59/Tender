@@ -1,15 +1,12 @@
 <% @match1 = 2 %>
 <% @match2 = 2 %>
 <% @match3 = 0 %>
-
-
 <script type="text/javascript">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js">
 $(document).ready(function() {
 	
-	   $('.collapsible').collapsible({
-	   });
+	  $('.collapsible').collapsible({
+	  	accordion: false
+	  });
 
      $('#match1').click(function(){
         $("#match_question_background").fadeIn();
@@ -64,7 +61,12 @@ $(document).ready(function() {
 	<h2>Your matches:</h2>
 	<div class="row">
 		<% if @matched_user %>
+		<% if @questions %>
+
+		<% @questions.each do |q| %>
 		<% @matched_user.each do |c| %>
+		<% if @answers %>
+		<% @answers.each do |a| %>
 		<div class="col s12 m4 l4">
 			<div class="card">
 				<div class="card-image">
@@ -83,33 +85,40 @@ $(document).ready(function() {
 					<ul class="answer collapsible" data-collapsible="accordion">
 						<li>
 							<div class="collapsible-header">
-								"First Question"
+								<%= q.q1 %>
+							</div>
+							
+							<div class="collapsible-body" style="display: none;"> 
+						 
+								<p>
+									
+								</p>
+						
+							</div>						
+						</li>
+						<li>
+							<div class="collapsible-header">
+								<%= q.q2 %>
 							</div>
 							<div class="collapsible-body" style="display: none;"> 
+							
 								<p>
-									This your matches answer to your first question.
+									
 								</p>
+							
 							</div>
 						</li>
 						<li>
 							<div class="collapsible-header">
-								"Second Question"
+								<%= q.q3 %>
 							</div>
 							<div class="collapsible-body" style="display: none;"> 
 								<p>
-									This your matches answer to your second question.
+									
 								</p>
 							</div>
-						</li>
-						<li>
-							<div class="collapsible-header">
-								"Third Question"
-							</div>
-							<div class="collapsible-body" style="display: none;"> 
-								<p>
-									This your matches answer to your third question.
-								</p>
-							</div>
+
+
 						</li>
 					</ul>
 					<% if @match1 != 2%> 
@@ -118,11 +127,18 @@ $(document).ready(function() {
 					<% else %>
 					<a href="" class="waves-effect waves-light btn open_chat"><i class="material-icons left">chat_bubble_outline</i>Open Chat</a>
 					<% end %>
+
 				</div>
 			</div>		
 		</div>
 		<% end %>
 		<% end %>
+		<% end %>
+		<% end %>
+		<% end %>
+		<% end %>
+	
+	
 	</div>				
 </div>
 <footer class="page-footer light-blue accent-1">
