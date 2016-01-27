@@ -8,7 +8,7 @@ class User < ActiveRecord::Base
   validates :first_name, :last_name, :sex, presence: true, length: { in: 2..20 }
   validates :email, presence: true, uniqueness: { case_sensitive: false }, format: { with: EMAIL_REGEX }
 
-  # validates :birthday, presence: true
+  validates :birthday, presence: true
 
   has_attached_file :avatar
   validates_attachment_content_type :avatar, :content_type => ["image/jpg", "image/jpeg", "image/png", "image/gif"]
