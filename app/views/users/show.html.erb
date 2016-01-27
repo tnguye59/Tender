@@ -58,6 +58,10 @@ $(document).ready(function() {
 			<a href="/personal/<%= @user.id %>/edit" class="waves-effect waves-light btn-large edit_button">Edit Your Questions</a>
 		</div>
 	</div>
+
+<% if flash[:answered] %>
+<%= flash[:answered] %>
+<% end %>
 	<h2>Your matches:</h2>
 	<div class="row">
 		<% if @matched_user %>
@@ -65,8 +69,6 @@ $(document).ready(function() {
 
 		<% @questions.each do |q| %>
 		<% @matched_user.each do |c| %>
-		<% if @answers %>
-		<% @answers.each do |a| %>
 		<div class="col s12 m4 l4">
 			<div class="card">
 				<div class="card-image">
@@ -77,10 +79,13 @@ $(document).ready(function() {
 					<div class="match-link">
 						<a href="/users/<%= c.id %>/profile" class="center_align">Profile</a>
 					</div>
+					<% if c.answered(c.id, current_user.id) == false %>
 					<div class="match-link">
 						<a href="/questions/<%= c.id %>" class="center_align">Questions</a>
 					</div>
+					<% end %>
 				</div>
+			
 				<div class="match-content">
 					<ul class="answer collapsible" data-collapsible="accordion">
 						<li>
@@ -91,7 +96,7 @@ $(document).ready(function() {
 							<div class="collapsible-body" style="display: none;"> 
 						 
 								<p>
-									
+									<b><%= q.user_answer1(c.id) %></b>
 								</p>
 						
 							</div>						
@@ -103,7 +108,7 @@ $(document).ready(function() {
 							<div class="collapsible-body" style="display: none;"> 
 							
 								<p>
-									
+									<b><%= q.user_answer2(c.id) %></b>
 								</p>
 							
 							</div>
@@ -114,13 +119,14 @@ $(document).ready(function() {
 							</div>
 							<div class="collapsible-body" style="display: none;"> 
 								<p>
-									
+									<b><%= q.user_answer3(c.id) %></b>
 								</p>
 							</div>
 
 
 						</li>
 					</ul>
+
 					<% if @match1 != 2%> 
 					<a href=""><i class="small material-icons yes_vote">thumb_up</i></a>
 					<a href=""><i class="small material-icons no_vote">thumb_down</i></a>
@@ -129,16 +135,14 @@ $(document).ready(function() {
 					<% end %>
 
 				</div>
-			</div>		
+
+			</div>
+
 		</div>
 		<% end %>
 		<% end %>
 		<% end %>
 		<% end %>
-		<% end %>
-		<% end %>
-	
-	
 	</div>				
 </div>
 <footer class="page-footer light-blue accent-1">

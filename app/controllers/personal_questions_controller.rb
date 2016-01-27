@@ -27,18 +27,19 @@ class PersonalQuestionsController < ApplicationController
     end
   end
 
+
   def show 
     @user = User.find(params[:id])
     @questions = PersonalQuestion.where(user_id:params[:id])
   end
 
   def createAnswer
-    answer = Answer.new(answer_params)
-    if answer.save
-      redirect_to "/user/#{answer.user_id}"
-    else 
-      flash[:errors] = answer.errors.full_messages
-      redirect_to :back
+    if Answer.where(personal_question_id:params[:personal_question_id],user_id:params[:user_id]).exists?
+      flash[:answered] = "You already answered"
+      redirect_to "/user/#{current_user.id}"
+    else
+      Answer.create(user_id: params[:user_id], personal_question_id: params[:personal_question_id], a1: params[:a1], a2: params[:a2], a3: params[:a3])
+        redirect_to "/user/#{current_user.id}"
     end 
   end
 
@@ -46,8 +47,4 @@ class PersonalQuestionsController < ApplicationController
   	def personal_params
   		params.require(:personal_question).permit(:q1,:q2,:q3, :user_id)
   	end
-
-    def answer_params
-      params.require(:answer).permit(:user_id, :personal_question_id, :a1, :a2, :a3)
-    end
 end
