@@ -9,7 +9,9 @@
   <%= javascript_include_tag "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js" %>
   <%= stylesheet_link_tag "http://fonts.googleapis.com/icon?family=Material+Icons" %>
   <%= csrf_meta_tags %>
-  <link href='http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+  <%= stylesheet_link_tag "https://fonts.googleapis.com/css?family=Lobster" %>
+  <%= stylesheet_link_tag "https://fonts.googleapis.com/css?family=Nothing+You+Could+Do" %>
+	
 
 <script type="text/javascript">
 $(document).ready(function() {
@@ -43,21 +45,12 @@ $(document).ready(function() {
         return false;
       });
 
-     $('.slider').slider({full_width: true});
 });
 
 </script>
 
 </head>
 <body>
-<<<<<<< HEAD
-<% if flash[:errors] %>
-<% flash[:errors].each do |error| %>
-<%= error %>
-<% end %> 
-<% end %>
-=======
->>>>>>> facebook
 
   <% if flash[:errors] %>
     <% flash[:errors].each do |error| %>
