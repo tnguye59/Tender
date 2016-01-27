@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160125220803) do
+ActiveRecord::Schema.define(version: 20160127183033) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -57,6 +57,7 @@ ActiveRecord::Schema.define(version: 20160125220803) do
     t.integer  "match_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "post_id"
   end
 
   add_index "messages", ["match_id"], name: "index_messages_on_match_id", using: :btree
@@ -90,6 +91,8 @@ ActiveRecord::Schema.define(version: 20160125220803) do
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
+    t.string   "uid"
+    t.string   "provider"
   end
 
   add_foreign_key "answers", "personal_questions"

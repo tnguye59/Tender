@@ -1,4 +1,0 @@
-APP_ID= '204380873243160'
-APP_SECRET= '6e22040c1d9ab2d94c9b7bdec3f01e9d'
-SITE_URL = 'http://localhost:3000'
- 

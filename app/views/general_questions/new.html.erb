@@ -7,7 +7,7 @@
 			<div class="panel-body">
 				<form action="/general" method="post">
                 	<input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
-                	<input type="hidden" name="general_question[user_id]" value="<%= current_user.id%>">
+                	<input type="hidden" name="general_question[user_id]" value="<%= session['user_id']%>">
 					<fieldset class="z-depth-1">
 						 <div class="form-group">
 						 	<p>
