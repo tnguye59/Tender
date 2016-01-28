@@ -60,6 +60,15 @@ class UsersController < ApplicationController
     render 'profile'
   end
 
+  def destroy
+    user = User.find(params[:id])
+    if user.destroy 
+      redirect_to "/"
+    else 
+      flash[:errors] = user.errors.full_messages
+    end
+  end
+  
   private 
     def user_params
       params.require(:user).permit(:first_name, :last_name, :email, :height, :nationality,:sex, :city, :state, :birthday, :password, :password_confirmation, :avatar)

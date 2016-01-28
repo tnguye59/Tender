@@ -2,7 +2,7 @@
   <div class="nav-wrapper light-blue accent-1">
     <div class="col s6">
       <a href="/user/<%= current_user.id %>" class="brand-logo left">Tender</a> 
-      <a href="/users/<%= @question.user_id%>/edit" style="margin-left:220px" class="breadcrumb">Back</a>
+      <a href="/users/<%= current_user.id %>/edit" style="margin-left:220px" class="breadcrumb">Back</a>
     </div>
   </div>
 </nav>
@@ -11,28 +11,28 @@
         <div class="input-field col s6">
           <div class="panel panel-default">
             <div class="panel-heading">
-              <h3 class="panel-title">Edit Your Questions for Potential Matches</h3>
+              <h3 class="panel-title font">Edit Your Questions for Potential Matches</h3>
             </div>
-			<div class="panel-body">
-				<form action="/personal/<%=@question.user_id%>/edit" method="post" enctype="multipart/form-data">
+			<div class="panel-body profile_body z-depth-4">
+				<form action="/personal/<%=@question.id%>/edit" method="post" enctype="multipart/form-data">
                 	<input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
                 	<input type="hidden" name="personal_question[user_id]" value="<%= @question.user_id%>">
 					<fieldset class="z-depth-1">
 						 <div class="form-group">
 						 	<p>
-						 		Question #1:
+						 		<b>Question #1:</b>
 						 		<input class="form-control validate" value="<%=@question.q1%>" name="personal_question[q1]" type="text"
 						 	</p>
 						 </div>
 						 <div class="form-group">
 						 	<p>
-						 		Question #2:
+						 		<b>Question #2:</b>
 						 		<input class="form-control validate" value="<%=@question.q1%>" name="personal_question[q2]" type="text"
 						 	</p>
 						 </div>
 						 <div class="form-group">
 						 	<p>
-						 		Question #3:
+						 		<b>Question #3:</b>
 						 		<input class="form-control validate" value="<%=@question.q3%>" name="personal_question[q3]" type="text"
 						 	</p>
 						 </div>

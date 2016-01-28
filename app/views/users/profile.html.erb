@@ -15,66 +15,67 @@
       <div class="input-field col s6">
         <div class="panel panel-default">
           <div class="panel-heading">
-            <h3 class="panel-title" style="font-family:Lobster, cursive">Your Profile</h3>
+            <h3 class="panel-title" style="font-family:Lobster, cursive"><%= @user.first_name %>'s Profile</h3>
           </div>
-          <div class="panel-body">
-          	<%= image_tag @user.avatar.url %>
-              <fieldset class="z-depth-1">
-              <div class="form-group">
-                <p>
-                  <b>First Name:</b> <%= @user.first_name %>
-                </p>
-              </div>
-              <div class="form-group">
-                <p>
-                  <b>Last Name:</b> <%= @user.last_name %>
-                </p>
-              </div>
-              <div class="form-group">
-                <p>
-                  <b>Email:</b> <%= @user.email %>
-                </p>
-              </div>
-              <div class="form-group">
-                <p>
-<<<<<<< HEAD
-                  <b>Height:</b> <%= @user.height %> in.
-=======
-                  <b>Height:</b> <%= @user.height %>
->>>>>>> debugging
-                </p>
-              </div>
-              <div class="form-group">
-                <p>
-                  <b>Nationality:</b> <%= @user.nationality %>
-                </p>
-              </div>
-              <div class="form-group">
-                <p>
-                 <b> Gender: </b> <%= @user.sex %>
-                </p>
-              </div>
-              <div class="form-group">
-                <p>
-                  <b>City: </b> <%= @user.city %>
-                 </p>
-              </div>
-              <div class="form-group">
-                <p>
-                 <b> State: </b> <%= @user.state %>
-                </p>
-              </div>
-              <div class="form-group">
-                <p>
-                  <b> Birthday: </b> <%= @user.birthday %>
-                </p>
-              </div>
+          <div class="panel-body z-depth-5">
+          	<img src="<%= @user.avatar.url %>" alt="profile_pic" class="circle responsive-img profile_pic z-depth-3">
+              <fieldset>
+              <div class="profile_body">
+                <div class="form-group">
+                  <p>
+                    <b>First Name:</b> <%= @user.first_name %>
+                  </p>
+                </div>
+                <div class="form-group">
+                  <p>
+                    <b>Last Name:</b> <%= @user.last_name %>
+                  </p>
+                </div>
+                <div class="form-group">
+                  <p>
+                    <b>Email:</b> <%= @user.email %>
+                  </p>
+                </div>
+                <div class="form-group">
+                  <p>
+                    <b>Height:</b> <%= @user.height %> in.
+                  </p>
+                </div>
+                <div class="form-group">
+                  <p>
+                    <b>Nationality:</b> <%= @user.nationality %>
+                  </p>
+                </div>
+                <div class="form-group">
+                  <p>
+                   <b> Gender: </b> <%= @user.sex %>
+                  </p>
+                </div>
+                <div class="form-group">
+                  <p>
+                    <b>City: </b> <%= @user.city %>
+                   </p>
+                </div>
+                <div class="form-group">
+                  <p>
+                   <b> State: </b> <%= @user.state %>
+                  </p>
+                </div>
+                <div class="form-group">
+                  <p>
+                    <b> Birthday: </b> <%= @user.birthday %>
+                  </p>
+                </div>
               </fieldset>
+            </div>
           </div>
-          <a href="/users/<%=@user.id%>/edit">Edit Your Profile</a>
+
+          <a class="waves-effect waves-light btn-large edit_profile" href="/users/<%=@user.id%>/edit">Edit Your Profile</a>
       </div>
     </div>
   </div>
+
+
 
   <script type="text/javascript">
     $('select:not([multiple])').material_select();
