@@ -14,7 +14,8 @@ $(document).ready(function() {
 	  <a href="/" class="brand-logo left">Tender</a> 
 	  <ul id="nav-mobile" class="right">
 	    <li><a href="/logout">LOG OUT</a></li>
-	    <span class="hide-on-med-and-down"><li>Signed in as: <%= @user.first_name %></li></span>
+	    <li>Signed in as: <%= @user.first_name %> <img width="50" height="50" src="<%= @user.avatar.url %>" alt="" class="circle">
+	    </li>
 	  </ul>
 	</div>
 </nav>
