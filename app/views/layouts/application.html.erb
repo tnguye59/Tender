@@ -54,12 +54,6 @@ $(document).ready(function() {
 
   <%= yield %>
 
-  <% if flash[:errors] %>
-    <% flash[:errors].each do |error| %>
-   <p> <%= error %></p>
-     <% end %> 
-  <% end %>
-
     <% if flash[:errors] %>
       <% flash[:errors].each do |error| %>
      <p class="errors">**<%= error %>**</p>

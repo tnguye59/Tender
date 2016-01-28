@@ -2,6 +2,16 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.body_color {
+	background-color:#F8F8F8;
+}
+.card-title {
+	font-family: Nothing You Could Do;
+}
+
+.mini_pic {
+	margin-right:3px;
+}
 .errors {
 	color:red;
 	margin-top:-87px;
@@ -15,12 +25,10 @@
 	font-weight:bold;
 }
 
-.dashboard_profile {
+.match_pic {
+	border:3px inset #B8B8B8;
 }
 
-.match_pic {
-	border:5px ridge black;
-}
 a.hover:hover {
 	color:#e0e0e0;
 }
@@ -35,7 +43,7 @@ a.hover:hover {
 }
 
 .profile_pic {
-	border:3px solid black;
+	border:2px solid black;
 	border-style:dotted;
 }
 
@@ -95,26 +103,26 @@ a{
 }
 
 .border {
-  	border: 1px solid black;
+  	border:3px ridge #B8B8B8;
+  	background-color:white;
  }
+
 .center {
 	text-align: center;
 }
 #user_photo {
-	height: 200px;
-	width: 240px;
 	display: inline-block;
 	text-align: center;
 	vertical-align: bottom;
-	margin-left:-100px;
+	margin-left:4%;
 }
 
 #profile_info{
+	border:none;
 	display: inline-block;
 	height: 150px;
 	text-align: center;
 	padding: 0px;
-	margin-left:10px;
 	margin-top:18px;
 }
 
