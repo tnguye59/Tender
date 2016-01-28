@@ -6,6 +6,8 @@
     </ul>
   </div>
 </nav>
+<div id="count">
+</div>
 
 <div id="chatbox">
 </div>
@@ -45,6 +47,7 @@
         socket.on("feed", function(response){
         for(var i = 0; i < response.messageFeed.length; i++) {
             $("#chatbox").append("<p>" + response.messageFeed[i].message + "</p>")
+            $("#count").append(response.messageFeed.length);
         }
     })
 </script>
