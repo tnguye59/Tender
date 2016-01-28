@@ -20,7 +20,9 @@ default: &default
   # For details on connection pooling, see rails configuration guide
   # http://guides.rubyonrails.org/configuring.html#database-pooling
   pool: 5
-  username: lamberdude
+
+
+  username: Tomtom
   password: 
 
 development:
@@ -83,7 +85,8 @@ test:
 production:
   <<: *default
   database: ror_project_production
-  username: lamberdude
+
+  username: Tomtom
   password: 
 
 

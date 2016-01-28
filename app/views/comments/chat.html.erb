@@ -2,74 +2,61 @@
   <div class="nav-wrapper">
     <a href="/" class="brand-logo left">Tender</a> 
     <ul id="nav-mobile" class="right hide-on-med-and-down" style="margin-left:1000px">
-      <li><a href="logout">LOG OUT</a></li>
+      <li><a href="/logout">LOG OUT</a></li>
     </ul>
   </div>
 </nav>
 
 <div class="col-lg-8 ">
-                <div class="panel-body">
-                    <ul class="chat">
-                        <li class="left clearfix">
-                            <span class="chat-img pull-left">
-                                <img src="http://placehold.it/50/55C1E7/fff&text=U" alt="User Avatar" class="img-circle" />
-                            </span>
-                            <div class="chat-body clearfix">
-                                <div class="header">
-                                    <strong class="primary-font">Jack Sparrow</strong><br>
-                                    <small class="text-muted">
-                                        <span class="glyphicon glyphicon-time"></span>
-                                        12 mins ago
-                                    </small>
-                                </div>
-                                <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur bibendum ornare
-                                    dolor, quis ullamcorper ligula sodales.
-                                </p>
-                            </div>
-                        </li>
-                        <li class="left clearfix">
-                            <span class="chat-img pull-left">
-                                <img src="http://placehold.it/50/FA6F57/fff&text=ME" alt="User Avatar" class="img-circle" />
-                            </span>
-                            <div class="chat-body clearfix">
-                                <div class="header">
-                                    <strong class="primary-font">Bhaumik Patel</strong><br>
-                                    <small class=" text-muted">
-                                        <span class="glyphicon glyphicon-time text-danger"></span>
-                                        <span><font color="red">Dec 16, 2014</font></span>
-                                    </small>
-                                    
-                                </div>
-                                <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur bibendum ornare
-                                    dolor, quis ullamcorper ligula sodales.
-                                </p>
-                            </div>
-                        </li>
-                        <li class="left clearfix"><span class="chat-img pull-left">
-                            <img src="http://placehold.it/50/55C1E7/fff&text=U" alt="User Avatar" class="img-circle" />
-                        </span>
-                            <div class="chat-body clearfix">
-                                <div class="header">
-                                    <strong class="primary-font">Jack Sparrow</strong> <small class="pull-right text-muted">
-                                        <span class="glyphicon glyphicon-time"></span>14 mins ago</small>
-                                </div>
-                                <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur bibendum ornare
-                                    dolor, quis ullamcorper ligula sodales.
-                                </p>
-                            </div>
-                        </li>
-                        </ul>
-            </div>
+    <div class="panel-body">
+        <ul class="chat">
+            <li class="left clearfix">
+                <span class="chat-img pull-left">
+                    <img src="http://placehold.it/50/FA6F57/fff&text=ME" alt="User Avatar" class="img-circle" />
+                </span>
+                <div class="chat-body clearfix">
+                    <div class="header">
+                    <% @messages.each do |m|%> 
+                        <strong class="primary-font"><%= m.user.first_name%></strong><br>
+                        <small class=" text-muted">
+                            <span class="glyphicon glyphicon-time text-danger"></span>
+                            <span><font color="red">Dec 16, 2014</font></span>
+                        </small>         
+                    </div>
+                    <p><%= m.message %></p>
+                </div>
+                <% end %>
+            </li>
+            
+            <li class="left clearfix"><span class="chat-img pull-left">
+                <img src="http://placehold.it/50/55C1E7/fff&text=U" alt="User Avatar" class="img-circle" />
+            </span>
+                <div class="chat-body clearfix">
+                    <div class="header">
+                        <strong class="primary-font">Jack Sparrow</strong> <small class="pull-right text-muted">
+                            <span class="glyphicon glyphicon-time"></span>14 mins ago</small>
+                    </div>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur bibendum ornare
+                        dolor, quis ullamcorper ligula sodales.
+                    </p>
+                </div>
+            </li>
+            </ul>
+        </div>
 </div>
+ 
+
 
  <div class="row">
-    <form class="col s12">
+    <form class="col s12" action="/message" method="post">
+    <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+    <input type="hidden" name="message[user_id]" value= "<%= session[:user_id]%>">
+    <input type="hidden" name="message[match_id]" value= "<%=@match_id %>">
+    <input type="hidden" name="message[post_id]" value= " <%= session[:user_id]%>">
       <div class="row">
         <div class="input-field col s4">
-          <textarea id="textarea1" class="materialize-textarea"></textarea>
+          <textarea id="textarea1" class="materialize-textarea" name="message[message]"></textarea>
           <label for="textarea1">Enter Comment</label>
         </div>
       </div>
