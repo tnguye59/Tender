@@ -1,23 +1,26 @@
 <nav class="light-blue accent-1">
   <div class="nav-wrapper">
-    <a href="/" class="brand-logo left">Tender</a> 
+    <a href="/user/<%= current_user.id %>" class="brand-logo left">Tender</a> 
     <ul id="nav-mobile" class="right hide-on-med-and-down" style="margin-left:1000px">
+      <li><a href="/user/<%= current_user.id %>">HOME</a></li>
       <li><a href="/logout">LOG OUT</a></li>
     </ul>
   </div>
 </nav>
 
+<h4 class="font center-align">You are chatting with <span class="name"><%= @match_id.first_name %></span></h4>
+
 <div id="chatbox">
 </div>
 
- <div class="row">
+ <div class="row ">
     <form class="col s12" id="chat-form">
       <div class="row">
         <div class="input-field col s4">
         <input type="hidden" id="chat-name" value="<%= current_user.first_name%>">
-        <input id="textbox" class="input-filed col s6" placeholder="Enter message here">
+        <input id="textbox" class="input-filed col s12" placeholder="Enter message here">
         </div>
-         <input class="btn waves-light light-blue accent-1" type="submit" value="Send">
+        <input class="btn waves-light light-blue accent-1 send" type="submit" value="Send">
     </form>
   </div>
 
