@@ -1,4 +1,5 @@
 class CommentsController < ApplicationController
+	skip_before_filter :verify_authenticity_token, :only => :count
 	def chat
 		@match_id = User.find(params[:id])
 		@messages = Message.where(user_id:current_user.id, match_id: params[:id])
@@ -14,6 +15,10 @@ class CommentsController < ApplicationController
 	    # end 
 	end
 
+	def count
+		Message.create(match_id: params[:match_id], count: params[:count])
+		render :json => { :result => true }
+	end
 	# private
 	# 	def message_params
 	#       params.require(:message).permit(:message, :user_id, :match_id, :post_id)
