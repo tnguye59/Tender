@@ -124,16 +124,6 @@ $(document).ready(function() {
 
 						</li>
 					</ul>
-<!-- <<<<<<< HEAD
-
-					<% if @match1 != 2%> 
-					<a href=""><i class="small material-icons yes_vote">thumb_up</i></a>
-					<a href=""><i class="small material-icons no_vote">thumb_down</i></a>
-					<% else %>
-					<div>
-						<a href="" class="waves-effect waves-light btn open_chat btn-border white"><i class="material-icons left">chat_bubble_outline</i><span class="light-blue-text accent-1">Open Chat</span></a>
-					</div>
-======= -->
 					<% if Match.find_by(user_id:@user.id, match_id: c.id).thumb == 0 %>
 					<a href="/thumb/up/<%=@user.id%>/<%=c.id%>"><i class="small material-icons yes_vote">thumb_up</i></a>
 					<a href="/thumb/down/<%=@user.id%>/<%=c.id%>"><i class="small material-icons no_vote">thumb_down</i></a>
