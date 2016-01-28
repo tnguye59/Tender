@@ -9,50 +9,58 @@
 </nav>
 
 
-  <div class="containerRegister container">
+  <div class="containerRegister container" >
     <div class="row">
       <div class="input-field col s6">
         <div class="panel panel-default">
           <div class="panel-heading">
-            <h3 class="panel-title">Edit Your Profile</h3>
+            <h3 class="panel-title font">Edit Your Profile</h3>
           </div>
-          <div class="panel-body">
+          <form action="/users/<%= @user.id %>" method="post">
+            <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+            <input class="btn waves-light btn-large red accent-1" type="submit" value="Delete Your Profile">
+            <input type="hidden"name="_method"value="delete">
+          </form>        
+          <p class="edit_profile"><a class="hover" href="/personal/<%=@user.id%>/edit">Edit Your Personal Questions</a></p>
+
+          <div class="panel-body z-depth-4">
+          <div class="profile_body">
             <form action= "/users/<%=@user.id%>/update" method="post" enctype="multipart/form-data">
               <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
               <fieldset class="z-depth-1">
               <div class="form-group">
                 <p>
-                  First Name:
+                  <b>First Name:</b>
                 <input class="form-control validate" name="user[first_name]" type="text" value="<%= @user.first_name %>">
                 </p>
               </div>
               <div class="form-group">
                 <p>
-                  Last Name:
+                  <b>Last Name:</b>
                 <input class="form-control validate" value="<%=@user.last_name%>" name="user[last_name]" type="text">
                 </p>
               </div>
               <div class="form-group">
                 <p>
-                  Email:
+                  <b>Email:</b>
                   <input class="form-control validate" value="<%=@user.email%>" name="user[email]" type="email">
                 </p>
               </div>
               <div class="form-group">
                 <p>
-                  Height(in inches):
+                  <b>Height</b>(in inches): 
                 <input class="form-control validate" value="<%=@user.height%>" name="user[height]" type="number" step="any">
                 </p>
               </div>
               <div class="form-group">
                 <p>
-                  Nationality:
+                  <b>Nationality:</b>
                 <input class="form-control validate" value="<%=@user.nationality%>" name="user[nationality]" type="text">
               </p>
               </div>
               <div class="form-group">
                 <p>
-                  Sex:
+                  <b>Sex:</b>
                   <select name="user[sex]">
                     <% gender.each do |g| %>
                     <% if @user.sex == g %>
@@ -66,7 +74,7 @@
               </div>
               <div class="form-group">
                 <p>
-                  City:
+                  <b>City:</b>
                   <select name="user[city]">
                     <% cities.each do |city| %>
                     <% if city == @user.city %>
@@ -80,7 +88,7 @@
               </div>
               <div class="form-group">
                 <p>
-                  State:
+                 <b> State: </b>
                 <select name="user[state]">
                   <% us_states.each do |state| %>
                   <% if state == @user.state%>
@@ -94,34 +102,35 @@
               </div>
               <div class="form-group">
                 <p>
-                  Birthday:
+                <b>  Birthday: </b>
                 <input class="form-control validate" value="<%=@user.birthday%>" name="user[birthday]" type="date">
               </p>
               </div>
               <div class="form-group">
                 <p>
-                  Password:
+                <b>  Password: </b>
                 <input class="form-control validate" placeholder="Password" value="<%=@user.password%>" name="user[password]" type="password">
               </p>
               </div>
               <div class="form-group">
                 <p>
-                  Password Confirmation:
+                <b>  Password Confirmation: </b>
                 <input class="form-control validate" placeholder="Password Confirmation" value="<%=@user.password_confirmation%>" name="user[password_confirmation]" type="password">
               </p>
               </div>
               <div class="form-group">
                 <p> 
-                  Profile Picture:
+                <b>  Profile Picture: </b>
                   <input class="form-control validate" value="<%=@user.avatar%>" name="user[avatar]" type="file">
                 </p>
               </div>
               <input type="hidden" name="_method" value="patch">
+              <br>
               <input class="btn waves-light btn-large light-blue accent-1" type="submit" value="Edit">
               </fieldset>
             </form>
           </div>
-          <a href="/personal/<%=@user.id%>/edit">Edit Your Personal Questions</a>
+          </div>
       </div>
     </div>
   </div>

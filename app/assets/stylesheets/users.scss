@@ -2,7 +2,27 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+a.hover:hover {
+	color:#e0e0e0;
+}
 
+.edit_profile {
+	margin-left:27px;
+}
+
+.profile_body {
+	border-style:ridge;
+	border-width:5px;
+}
+
+.profile_pic {
+	border:3px solid black;
+	border-style:dotted;
+}
+
+.font {
+	font-family:'Lobster', cursive;
+}
 
 .first_name {
 	font-weight:bold;

@@ -18,11 +18,12 @@ class PersonalQuestionsController < ApplicationController
   end
 
   def update
-     q = PersonalQuestion.find_by(user_id: params[:id])
-    if q.update(personal_params)
-      redirect_to "/user/#{params[:id]}"
+    q = PersonalQuestion.find(params[:id]).destroy
+    new_question = PersonalQuestion.new(personal_params) 
+    if new_question.save
+      redirect_to "/user/#{new_question.user_id}"
     else
-      flash[:errors] = q.errors.full_messages
+      flash[:errors] = new_question.errors.full_messages
       redirect_to :back
     end
   end

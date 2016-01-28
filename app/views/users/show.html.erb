@@ -55,7 +55,7 @@ $(document).ready(function() {
 					<div class="match-link">
 						<a href="/users/<%= c.id %>/profile" class="center_align">Profile</a>
 					</div>
-					<% if c.answered(c.id, current_user.id) == false %>
+					<% if c.answered(c.id, current_user.id) === false %>
 					<div class="match-link">
 						<a href="/questions/<%= c.id %>" class="center_align">Questions</a>
 					</div>
