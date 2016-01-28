@@ -26,7 +26,7 @@ $(document).ready(function() {
 	</div>
 	<div class="row section">
 		<!-- USER PHOTO -->
-		<img src="<%= @user.avatar.url %>" alt="User Photo" id="user_photo" class="col s8 push-s2 m3 l3 dashboard_profile">
+		<a href="/users/<%= @user.id %>/profile"><img src="<%= @user.avatar.url %>" alt="User Photo" id="user_photo" class="z-depth-1 col s8 push-s2 m3 l3 dashboard_profile circle responsive-img"></a>
 		<!-- USER PROFILE INFO -->
 		<div id="profile_info" class="col s12 m9 l9 border">
 			<a href="/users/<%= @user.id %>/edit" class="waves-effect waves-light btn-large edit_button light-blue accent-1">Edit Your Profile</a>
@@ -34,9 +34,6 @@ $(document).ready(function() {
 			<a href="/personal/<%= @user.id %>/edit" class="waves-effect waves-light btn-large edit_button light-blue accent-1">Edit Your Questions</a>
 		</div>
 	</div>
-<% if flash[:answered] %>
-<%= flash[:answered] %>
-<% end %>
 	<h3 class="font" style="padding: 5px;">Your matches:</h3>
 	<div class="row">
 		<% if @matched_user %>
