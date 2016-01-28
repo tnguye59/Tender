@@ -8,29 +8,6 @@ $(document).ready(function() {
 	  	accordion: false
 	  });
 
-     $('#match1').click(function(){
-        $("#match_question_background").fadeIn();
-        $("#match_question1").fadeIn();
-        return false;
-      });
-
-      $('#match2').click(function(){
-        $("#match_question_background").fadeIn();
-        $("#match_question2").fadeIn();
-        return false;
-      });
-
-      $('#match3').click(function(){
-        $("#match_question_background").fadeIn();
-        $("#match_question3").fadeIn();
-        return false;
-      });
-
-      $("#close").click(function(){
-        $("#this").fadeOut();
-        $("#this").fadeOut();
-        return false;
-      });
       $('.slider').slider({full_width: true});
  });
 </script>
@@ -59,15 +36,13 @@ $(document).ready(function() {
 			<a href="/personal/<%= @user.id %>/edit" class="waves-effect waves-light btn-large edit_button light-blue accent-1">Edit Your Questions</a>
 		</div>
 	</div>
-
 <% if flash[:answered] %>
 <%= flash[:answered] %>
 <% end %>
-	<h2>Your matches:</h2>
+	<h3 style="padding: 5px;">Your matches:</h3>
 	<div class="row">
 		<% if @matched_user %>
 		<% if @questions %>
-
 		<% @questions.each do |q| %>
 		<% @matched_user.each do |c| %>
 		<div class="col s12 m4 l4">
@@ -86,7 +61,6 @@ $(document).ready(function() {
 					</div>
 					<% end %>
 				</div>
-			
 				<div class="match-content">
 					<ul class="answer collapsible" data-collapsible="accordion">
 						<li>
@@ -123,11 +97,8 @@ $(document).ready(function() {
 									<b><%= q.user_answer3(c.id) %></b>
 								</p>
 							</div>
-
-
 						</li>
 					</ul>
-
 					<% if @match1 != 2%> 
 					<a href=""><i class="small material-icons yes_vote">thumb_up</i></a>
 					<a href=""><i class="small material-icons no_vote">thumb_down</i></a>
@@ -136,11 +107,8 @@ $(document).ready(function() {
 						<a href="" class="waves-effect waves-light btn open_chat btn-border white"><i class="material-icons left">chat_bubble_outline</i><span class="light-blue-text accent-1">Open Chat</span></a>
 					</div>
 					<% end %>
-
 				</div>
-
 			</div>
-
 		</div>
 		<% end %>
 		<% end %>
@@ -157,49 +125,6 @@ $(document).ready(function() {
   </div>
 </footer>
 
-	<!-- JQUERY DIVS -->
-<div id="match_question_background">
-</div>
-<div id="match_question1">
-	<h4>Match Questions</h4>
-	<form action="/user/show" method="post">
-		<input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
-		Question 1: <input type="text" name="question1">
-		<br>
-		Question 2: <input type="text" name="question1">
-		<br>
-		Question 3: <input type="text" name="question1">
-		<br>
-		<input type="submit">
-	</form>
-</div>
-
-<div id="match_question2">
-	<h4>Match Questions</h4>
-	<form action="/user/show" method="post">
-		<input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
-		Question 1: <input type="text" name="question1">
-		<br>
-		Question 2: <input type="text" name="question1">
-		<br>
-		Question 3: <input type="text" name="question1">
-		<br>
-		<input type="submit">
-	</form>
-</div>
-
-<div id="match_question3">
-	<h4>Match Questions</h4>
-	<form action="/user/show" method="post">
-		<input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
-		Question 1: <input type="text" name="question1">
-		<br>
-		Question 2: <input type="text" name="question1">
-		<br>
-		Question 3: <input type="text" name="question1">
-		<br>
-		<input type="submit">
-	</form>
-</div>
+	
 
 
