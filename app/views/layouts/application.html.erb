@@ -54,25 +54,17 @@ $(document).ready(function() {
 
   <%= yield %>
 
-<<<<<<< HEAD
   <% if flash[:errors] %>
     <% flash[:errors].each do |error| %>
    <p> <%= error %></p>
      <% end %> 
   <% end %>
-=======
 
     <% if flash[:errors] %>
       <% flash[:errors].each do |error| %>
      <p class="errors">**<%= error %>**</p>
        <% end %> 
     <% end %>
->>>>>>> 4f5f8391e12d0e746e2622e3071f43120d56bdbc
 
-
-<<<<<<< HEAD
-=======
-
->>>>>>> 4f5f8391e12d0e746e2622e3071f43120d56bdbc
 </body>
 </html>

@@ -7,7 +7,7 @@
   </div>
 </nav>
 
-<div class="col-lg-8 ">
+<!-- <div class="col-lg-8 ">
     <div class="panel-body">
         <ul class="chat">
             <li class="left clearfix">
@@ -44,19 +44,15 @@
             </li>
             </ul>
         </div>
+</div> -->
+<div id="chatbox">
 </div>
- 
-
 
  <div class="row">
-    <form class="col s12" action="/message" method="post">
-    <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
-    <input type="hidden" name="message[user_id]" value= "<%= session[:user_id]%>">
-    <input type="hidden" name="message[match_id]" value= "<%=@match_id %>">
-    <input type="hidden" name="message[post_id]" value= " <%= session[:user_id]%>">
+    <form class="col s12" id="chat-form">
       <div class="row">
         <div class="input-field col s4">
-          <textarea id="textarea1" class="materialize-textarea" name="message[message]"></textarea>
+          <textarea id="textarea1" class="materialize-textarea" id="textbox"></textarea>
           <label for="textarea1">Enter Comment</label>
         </div>
       </div>
