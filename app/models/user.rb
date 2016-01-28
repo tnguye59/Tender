@@ -4,6 +4,7 @@ class User < ActiveRecord::Base
   has_many :relationships, :class_name =>"Match", :foreign_key => "user_id" 
   has_many :matches, :through => :relationships
   has_many :messages, dependent: :destroy
+  has_many :answers, dependent: :destroy
   has_many :PersonalQuestions, dependent: :destroy
   EMAIL_REGEX = /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]+)\z/i
   validates :first_name, :last_name, :sex, presence: true

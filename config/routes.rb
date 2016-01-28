@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   patch "users/:id/update" => "users#update"
   get "users/:id/profile" => "users#profile"
   get "aboutus" => "users#aboutus"
+  delete "users/:id" => "users#destroy"
   #Sessions
   post "session" => "sessions#create"
   get "/logout" => "sessions#destroy"
