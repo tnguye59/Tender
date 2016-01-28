@@ -16,9 +16,6 @@
 }
 
 .dashboard_profile {
-	border-color:black;
-	border-width:5px;
-	border-style:double;
 }
 
 .match_pic {
@@ -104,10 +101,12 @@ a{
 	text-align: center;
 }
 #user_photo {
-	height: 150px;
+	height: 200px;
+	width: 240px;
 	display: inline-block;
 	text-align: center;
 	vertical-align: bottom;
+	margin-left:-100px;
 }
 
 #profile_info{
@@ -115,6 +114,8 @@ a{
 	height: 150px;
 	text-align: center;
 	padding: 0px;
+	margin-left:10px;
+	margin-top:18px;
 }
 
 #matches {
