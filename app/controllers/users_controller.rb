@@ -35,20 +35,36 @@ class UsersController < ApplicationController
     @answers = Answer.where(personal_question_id: question_id)
     @user = User.find(params[:id])
     @matched_user = User.find(params[:id]).matches.limit(3).distinct
-    @match = Match.where(user_id:params[:id]).limit(3)
+    matches = Match.where(user_id:@user.id)
+    @match = matches.where.not(thumb: -1).limit(3)
 
 	end
+
+  def thumbup
+    match1 = Match.find_by(user_id: params[:id], match_id: params[:match])
+    match1.update(thumb: 1)
+    redirect_to :back
+  end
+
+  def thumbdown
+    match1 = Match.find_by(user_id: params[:id], match_id: params[:match])
+    match1.update(thumb: -1)
+    match2 = Match.find_by(user_id: params[:match], match_id: params[:id])
+    match2.update(thumb: -1)
+    redirect_to :back
+  end
 
   def match
     user = GeneralQuestion.find_by(user_id:params[:id])
     candidates = User.all 
     candidates.each do |c| 
-      if Match.where(match_id: c.id, user_id:params[:id]).exists?
+      if Match.where(match_id: c.id, user_id:params[:id]).exists? && Match.where(match_id: params[:id], user_id:c.id).exists?
       else
         if user.gender == c.sex  && 
           user.max_age > c.age(c.birthday) &&
           user.min_age < c.age(c.birthday) && user.city == c.city 
-          match = Match.create(user_id: user.user_id, match_id: c.id)
+          match1 = Match.create(user_id: user.user_id, match_id: c.id, thumb:0)
+          match2 = Match.create(user_id: c.id, match_id: user.user_id, thumb:0)
         end
       end
     end

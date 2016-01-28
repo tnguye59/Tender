@@ -1,6 +1,3 @@
-<% @match1 = 0 %>
-<% @match2 = 0 %>
-<% @match3 = 0 %>
 <script type="text/javascript">
 $(document).ready(function() {
 	
@@ -67,9 +64,9 @@ $(document).ready(function() {
 	<div class="row">
 		<% if @matched_user %>
 		<% if @questions %>
-
 		<% @questions.each do |q| %>
 		<% @matched_user.each do |c| %>
+			<% if Match.find_by(user_id:@user.id, match_id: c.id).thumb != -1 %>
 		<div class="col s12 m4 l4">
 			<div class="card">
 				<div class="card-image">
@@ -127,6 +124,7 @@ $(document).ready(function() {
 
 						</li>
 					</ul>
+<!-- <<<<<<< HEAD
 
 					<% if @match1 != 2%> 
 					<a href=""><i class="small material-icons yes_vote">thumb_up</i></a>
@@ -135,13 +133,19 @@ $(document).ready(function() {
 					<div>
 						<a href="" class="waves-effect waves-light btn open_chat btn-border white"><i class="material-icons left">chat_bubble_outline</i><span class="light-blue-text accent-1">Open Chat</span></a>
 					</div>
+======= -->
+					<% if Match.find_by(user_id:@user.id, match_id: c.id).thumb == 0 %>
+					<a href="/thumb/up/<%=@user.id%>/<%=c.id%>"><i class="small material-icons yes_vote">thumb_up</i></a>
+					<a href="/thumb/down/<%=@user.id%>/<%=c.id%>"><i class="small material-icons no_vote">thumb_down</i></a>
+					<% elsif Match.find_by(user_id:@user.id, match_id: c.id).thumb == 1 && Match.find_by(user_id:c.id, match_id: @user.id).thumb == 1%> 
+					<a href="" class="waves-effect waves-light btn open_chat"><i class="material-icons left">chat_bubble_outline</i>Open Chat</a>
 					<% end %>
-
 				</div>
 
 			</div>
 
 		</div>
+		<% end %> <!-- to check to see if the user was previously deleted -->
 		<% end %>
 		<% end %>
 		<% end %>
