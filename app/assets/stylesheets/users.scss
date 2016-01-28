@@ -2,6 +2,28 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.errors {
+	color:red;
+	margin-top:-87px;
+	font-weight:bold;
+}
+
+.msg {
+	padding-top:20px;
+	margin-left:410px;
+	color:red;
+	font-weight:bold;
+}
+
+.dashboard_profile {
+	border-color:black;
+	border-width:5px;
+	border-style:double;
+}
+
+.match_pic {
+	border:5px ridge black;
+}
 a.hover:hover {
 	color:#e0e0e0;
 }
@@ -55,6 +77,7 @@ a.hover:hover {
 	text-align: center;
 	margin-top: 18px;
 }
+
 a{
 	margin-right: 30px;
 }

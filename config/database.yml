@@ -22,7 +22,7 @@ default: &default
   pool: 5
 
 
-  username: Tomtom
+  username: jessicapeng
   password: 
 
 development:
@@ -86,7 +86,7 @@ production:
   <<: *default
   database: ror_project_production
 
-  username: Tomtom
+  username: jessicapeng
   password: 
 
 

@@ -22,11 +22,11 @@ $(document).ready(function() {
 <!-- BEGIN DASHBOARD -->
 <div class="container">
     <div class="row">
-		<h3 class="left">Welcome, <%= @user.first_name %>!</h3>
+		<h1 class="left font">Welcome, <%= @user.first_name %>!</h1>
 	</div>
 	<div class="row section">
 		<!-- USER PHOTO -->
-		<img src="<%= @user.avatar.url %>" alt="User Photo" id="user_photo" class="col s8 push-s2 m3 l3">
+		<img src="<%= @user.avatar.url %>" alt="User Photo" id="user_photo" class="col s8 push-s2 m3 l3 dashboard_profile">
 		<!-- USER PROFILE INFO -->
 		<div id="profile_info" class="col s12 m9 l9 border">
 			<a href="/users/<%= @user.id %>/edit" class="waves-effect waves-light btn-large edit_button light-blue accent-1">Edit Your Profile</a>
@@ -37,7 +37,7 @@ $(document).ready(function() {
 <% if flash[:answered] %>
 <%= flash[:answered] %>
 <% end %>
-	<h3 style="padding: 5px;">Your matches:</h3>
+	<h3 class="font" style="padding: 5px;">Your matches:</h3>
 	<div class="row">
 		<% if @matched_user %>
 		<% if @questions %>
@@ -47,7 +47,7 @@ $(document).ready(function() {
 		<div class="col s12 m4 l4">
 			<div class="card">
 				<div class="card-image">
-		            <img src="<%= c.avatar.url %>" alt="Profile Image" class="border materialboxed">
+		            <img src="<%= c.avatar.url %>" alt="Profile Image" class="border materialboxed match_pic">
 		            <span class="card-title"><%= c.first_name %></span>
 	            </div>
 	            <div class="match-links">
