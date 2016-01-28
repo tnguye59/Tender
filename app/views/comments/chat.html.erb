@@ -7,44 +7,6 @@
   </div>
 </nav>
 
-<!-- <div class="col-lg-8 ">
-    <div class="panel-body">
-        <ul class="chat">
-            <li class="left clearfix">
-                <span class="chat-img pull-left">
-                    <img src="http://placehold.it/50/FA6F57/fff&text=ME" alt="User Avatar" class="img-circle" />
-                </span>
-                <div class="chat-body clearfix">
-                    <div class="header">
-                    <% @messages.each do |m|%> 
-                        <strong class="primary-font"><%= m.user.first_name%></strong><br>
-                        <small class=" text-muted">
-                            <span class="glyphicon glyphicon-time text-danger"></span>
-                            <span><font color="red">Dec 16, 2014</font></span>
-                        </small>         
-                    </div>
-                    <p><%= m.message %></p>
-                </div>
-                <% end %>
-            </li>
-            
-            <li class="left clearfix"><span class="chat-img pull-left">
-                <img src="http://placehold.it/50/55C1E7/fff&text=U" alt="User Avatar" class="img-circle" />
-            </span>
-                <div class="chat-body clearfix">
-                    <div class="header">
-                        <strong class="primary-font">Jack Sparrow</strong> <small class="pull-right text-muted">
-                            <span class="glyphicon glyphicon-time"></span>14 mins ago</small>
-                    </div>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur bibendum ornare
-                        dolor, quis ullamcorper ligula sodales.
-                    </p>
-                </div>
-            </li>
-            </ul>
-        </div>
-</div> -->
 <div id="chatbox">
 </div>
 
@@ -52,11 +14,37 @@
     <form class="col s12" id="chat-form">
       <div class="row">
         <div class="input-field col s4">
-          <textarea id="textarea1" class="materialize-textarea" id="textbox"></textarea>
-          <label for="textarea1">Enter Comment</label>
+        <input type="hidden" id="chat-name" value="<%= current_user.first_name%>">
+        <input id="textbox" class="input-filed col s6" placeholder="Enter message here">
         </div>
-      </div>
-         <input class="btn waves-light btn-large light-blue accent-1" type="submit" value="Send">
+         <input class="btn waves-light light-blue accent-1" type="submit" value="Send">
     </form>
   </div>
 
+
+<script type="text/javascript">
+    var socket = io.connect("http://127.0.0.1:8000", {force_connection: true});
+    
+    socket.on("welcome", function(){
+        $("#chatbox").append($("#chat-name").val() +" has entered chatroom</p>")
+    })
+
+    $("#chat-form").submit(function(){
+        var info = $("#textbox").val();
+        var name = $("#chat-name").val()
+        var message = name + " says: " + info;
+        socket.emit("message", {message: message})
+        $("#textbox").val("");
+        return false;
+    })
+
+    socket.on("newMessage", function(response){
+     $("#chatbox").append("<p>" + response.message + "</p>");
+    })
+
+        socket.on("feed", function(response){
+        for(var i = 0; i < response.messageFeed.length; i++) {
+            $("#chatbox").append("<p>" + response.messageFeed[i].message + "</p>")
+        }
+    })
+</script>
