@@ -39,7 +39,7 @@ $(document).ready(function() {
 			<a href="/personal/<%= @user.id %>/edit" class="waves-effect waves-light btn-large edit_button light-blue accent-1">Edit Your Questions</a>
 		</div>
 	</div>
-	<h3 class="font" style="padding: 5px;">Your matches:</h3>
+	<h4 class="font" style="padding: 5px;">Your matches:</h4>
     <div class="row">
         <% if @matched_user %>
         <% if @questions %>
@@ -106,6 +106,7 @@ $(document).ready(function() {
                     <a href="/thumb/down/<%=@user.id%>/<%=c.id%>"><i class="small material-icons no_vote">thumb_down</i></a>
                     <% elsif Match.find_by(user_id:@user.id, match_id: c.id).thumb == 1 && Match.find_by(user_id:c.id, match_id: @user.id).thumb == 1%> 
                     <a href="/chat/<%= c.id %>" class="waves-effect waves-light btn open_chat"><i class="material-icons left">chat_bubble_outline</i>Open Chat</a>
+                    <a href="/thumb/down/<%=@user.id%>/<%=c.id%>" class="waves-effect red waves-light btn open_chat"><i class="material-icons left">chat_bubble_outline</i>Delete</a>
                     <% end %>
                 </div>
             </div>

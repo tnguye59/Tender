@@ -37,6 +37,7 @@ Rails.application.routes.draw do
   post 'general' => 'general_questions#create'
 
   #Chat
+  post 'count' => "comments#count"
   get 'chat/:id' => "comments#chat"
 
   #Omniauth

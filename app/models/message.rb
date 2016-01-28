@@ -3,5 +3,5 @@ class Message < ActiveRecord::Base
   belongs_to :match, :foreign_key =>"match_id", :class_name => "User"
   has_many :users
   has_many :matches
-  validates :message, presence:true
+  # validates :message, presence:true
 end

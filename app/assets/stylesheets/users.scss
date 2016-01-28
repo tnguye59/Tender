@@ -2,6 +2,25 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.name {
+	color:red;
+}
+
+#chatbox {
+	margin-left: 24%;
+	margin-top: 5%;
+	border:3px ridge #404040;
+}
+
+#textbox {
+	margin-left:72%;
+}
+
+.send {
+	margin-left:23%;
+	margin-top:2%;
+}
+
 .body_color {
 	background-color:#F8F8F8;
 }
@@ -12,15 +31,16 @@
 .mini_pic {
 	margin-right:3px;
 }
+
 .errors {
 	color:red;
-	margin-top:-87px;
+	margin-top:-7%;
 	font-weight:bold;
 }
 
 .msg {
 	padding-top:20px;
-	margin-left:410px;
+	margin-left:20%;
 	color:red;
 	font-weight:bold;
 }
