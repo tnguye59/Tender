@@ -17,6 +17,8 @@ Rails.application.routes.draw do
   get "users/:id/profile" => "users#profile"
   get "aboutus" => "users#aboutus"
   delete "users/:id" => "users#destroy"
+  get "thumb/up/:id/:match" => "users#thumbup"
+  get "thumb/down/:id/:match" => "users#thumbdown"
 
   #Sessions
   post "session" => "sessions#create"
