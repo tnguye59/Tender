@@ -50,7 +50,7 @@
             $("#chatbox").append("<p>" + response.messageFeed[i].message + "</p>")
         }
         var match_id = $("#match_id").val();
-        $.post("/count", {count: response.messageFeed.length, match_id: match_id}, function(res){
+        $.post("/count", data: {count: response.messageFeed.length, match_id: match_id}, function(res){
             console.log(res.result);
         })
     });    
