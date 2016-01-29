@@ -45,7 +45,7 @@ $(document).ready(function() {
         <% if @questions %>
         <% @questions.each do |q| %>
         <% @matched_user.each do |c| %>
-            <% if Match.find_by(user_id:@user.id, match_id: c.id).thumb != -1 %>
+            <% if Match.find_by(user_id:@user.id, match_id: c.id).thumb != -1 && Match.find_by(user_id:@user.id, match_id: c.id).thumb != -2 %>
         <div class="col s12 m4 l4">
             <div class="card">
                 <div class="card-image">

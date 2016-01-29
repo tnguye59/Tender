@@ -84,6 +84,30 @@ class UsersController < ApplicationController
       flash[:errors] = user.errors.full_messages
     end
   end
+
+  def restore
+    u = User.find(params[:id])
+    match1 = Match.find_by(user_id: params[:id], match_id: params[:match])
+    match1.update(thumb: 0)
+    match2 = Match.find_by(user_id: params[:match], match_id: params[:id])
+    match2.update(thumb: 0)
+    redirect_to "/user/#{u.id}"
+  end
+
+  def history
+    @user = User.find(params[:id])
+    @matches = Match.where(user_id:params[:id], thumb:-1)
+    render 'history'
+  end
+
+  def permanent_delete
+    u = User.find(params[:id])
+    match1 = Match.find_by(user_id: params[:id], match_id: params[:match])
+    match1.update(thumb: -2)
+    match2 = Match.find_by(user_id: params[:match], match_id: params[:id])
+    match2.update(thumb: -2)
+    redirect_to "/user/#{u.id}"
+  end
   
   private 
     def user_params
