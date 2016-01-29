@@ -19,7 +19,7 @@
         <div class="input-field col s4">
         <input type="hidden" id="chat-name" value="<%= current_user.first_name%>">
         <input type="hidden" value="<%= @match_id.id %>" id="match_id">
-        <input id="textbox" class="input-filed col s12" placeholder="Enter message here">
+        <input id="textbox" class="input-filed col s12" placeholder="Enter message here" required>
         </div>
         <input class="btn waves-light light-blue accent-1 send" type="submit" value="Send">
     </form>
@@ -30,16 +30,16 @@
     
     socket.on("welcome", function(){
         $("#chatbox").append($("#chat-name").val() +" has entered chatroom</p>")
-    })
+    });
 
     $("#chat-form").submit(function(){
         var info = $("#textbox").val();
-        var name = $("#chat-name").val()
+        var name = $("#chat-name").val();
         var message = name + " says: " + info;
         socket.emit("message", {message: message})
         $("#textbox").val("");
         return false;
-    })
+    });
 
     socket.on("newMessage", function(response){
      $("#chatbox").append("<p>" + response.message + "</p>");
@@ -49,10 +49,10 @@
         for(var i = 0; i < response.messageFeed.length; i++) {
             $("#chatbox").append("<p>" + response.messageFeed[i].message + "</p>")
             $("#count").append(response.messageFeed.length);
-        }
-        var match_id = $("#match_id").val();
-        $.post("/count", data: {count: response.messageFeed.length, match_id: match_id}, function(res){
+        };
+        var match_id = $("#match_id").val()
+        $.post("/count", {count: response.messageFeed.length, match_id: match_id}, function(res){
             console.log(res.result);
-        })
+        });
     });    
 </script>
