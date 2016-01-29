@@ -1,4 +1,5 @@
 class CommentsController < ApplicationController
+	before_action :require_login  
 	skip_before_filter :verify_authenticity_token, :only => :count
 	def chat
 		@match_id = User.find(params[:id])

@@ -1,4 +1,6 @@
 class PersonalQuestionsController < ApplicationController
+  before_action :require_correct_user, only: [:edit]
+  before_action :require_login
   def new
   end
 

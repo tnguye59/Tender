@@ -1,4 +1,5 @@
 class GeneralQuestionsController < ApplicationController
+  before_action :require_login  
   def new
   end
 

@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
-	def index		
+  before_action :require_login, except: [:login, :aboutus, :register, :index, :create]
+	before_action :require_correct_user, only: [:edit, :update, :history, :destroy]
+  def index		
 	end
 
   def create 
@@ -27,6 +29,12 @@ class UsersController < ApplicationController
       redirect_to :back
     end
   end
+
+  def login 
+  end 
+
+  def register
+  end 
 
 	def show
     @questions = PersonalQuestion.where(user_id:params[:id])
@@ -110,6 +118,9 @@ class UsersController < ApplicationController
     redirect_to "/user/#{u.id}"
   end
   
+  def aboutus
+  end
+
   private 
     def user_params
       params.require(:user).permit(:first_name, :last_name, :email, :height, :nationality,:sex, :city, :state, :birthday, :password, :password_confirmation, :avatar)

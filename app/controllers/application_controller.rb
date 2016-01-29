@@ -20,6 +20,14 @@ class ApplicationController < ActionController::Base
   end 
   helper_method :gender, :current_user, :us_states, :cities
 
+  def require_login
+    redirect_to '/' if session[:user_id] == nil
+  end
+
+  def require_correct_user
+    user = User.find(params[:id])
+    redirect_to "/user/#{current_user.id}" if current_user != user
+  end
 
 
 end
