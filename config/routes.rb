@@ -17,9 +17,11 @@ Rails.application.routes.draw do
   get "users/:id/profile" => "users#profile"
   get "aboutus" => "users#aboutus"
   delete "users/:id" => "users#destroy"
+  get "history/:id" => "users#history"
+  get "restore/:id/:match" => "users#restore"
+  get "permanent/:id/:match" => "users#permanent_delete"
   get "thumb/up/:id/:match" => "users#thumbup"
   get "thumb/down/:id/:match" => "users#thumbdown"
-
   #Sessions
   post "session" => "sessions#create"
   get "logout" => "sessions#destroy"
