@@ -13,7 +13,7 @@ $(document).ready(function() {
 	<div class="nav-wrapper">
 	  <a href="/" class="brand-logo left">Tender</a> 
 	  <ul id="nav-mobile" class="right">
-	    <li class="mini_pic">Signed in as: <%= @user.first_name %>
+	    <li class="mini_pic">Signed in as: <strong><%= @user.first_name %></strong>
 	    </li> 
 	    <li>
 	    	<img width="50" height="50" src="<%= @user.avatar.url %>" style="margin-top:7px" alt="profile_pic" class="circle">
@@ -41,6 +41,11 @@ $(document).ready(function() {
 			<br>
 			<a href="/personal/<%= @user.id %>/edit" class="waves-effect waves-light btn-large edit_button light-blue accent-1">Edit Your Questions</a>
 		</div>
+        <div class="row">
+        <p> 
+           
+        </p>
+    </div>
 	</div>
 	<h4 class="font" style="padding: 5px;">Your matches:</h4>
     <div class="row">
