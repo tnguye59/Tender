@@ -19,7 +19,11 @@
           </div>
 
           <div class="panel-body z-depth-5">
+          <% if @count < 50 %>
+            <img src="/assets/question_mark.jpeg" alt="profile_pic" class="circle responsive-img profile_pic z-depth-3">
+          <% else %>
           	<img src="<%= @user.avatar.url %>" alt="profile_pic" class="circle responsive-img profile_pic z-depth-3">
+          <% end %>
               <fieldset>
               <div class="profile_body">
                 <div class="form-group">
@@ -29,42 +33,74 @@
                 </div>
                 <div class="form-group">
                   <p>
+                  <% if @count < 30 %>
+                    <b>Last Name:</b>?????
+                  <% else %>
                     <b>Last Name:</b> <%= @user.last_name %>
+                  <% end %>
                   </p>
                 </div>
                 <div class="form-group">
                   <p>
+                  <% if @count < 35 %>
+                    <b>Email:</b>?????
+                  <% else %>
                     <b>Email:</b> <%= @user.email %>
+                  <% end %>
                   </p>
                 </div>
                 <div class="form-group">
                   <p>
+                    <% if @count < 10 %>
+                    <b>Height:</b>?????
+                    <% else %>
                     <b>Height:</b> <%= @user.height %> in.
+                    <% end %>
                   </p>
                 </div>
                 <div class="form-group">
                   <p>
+                    <% if @count < 40 %>
+                    <b>Nationality:</b>?????
+                    <% else %>
                     <b>Nationality:</b> <%= @user.nationality %>
+                    <% end %>
                   </p>
                 </div>
                 <div class="form-group">
                   <p>
+                    <% if @count < 15 %>
+                    <b>Gender:</b>?????
+                    <% else %>
                    <b> Gender: </b> <%= @user.sex %>
+                   <% end %>
                   </p>
                 </div>
                 <div class="form-group">
                   <p>
+                    <% if @count < 45 %>
+                    <b>City:</b>?????
+                    <% else %>
                     <b>City: </b> <%= @user.city %>
+                    <% end %>
                    </p>
                 </div>
                 <div class="form-group">
                   <p>
-                   <b> State: </b> <%= @user.state %>
+                    <% if @count < 15 %>
+                    <b>State:</b>?????
+                    <% else %>
+                    <b> State: </b> <%= @user.state %>
+                    <% end %>
                   </p>
                 </div>
                 <div class="form-group">
                   <p>
+                    <% if @count < 20 %>
+                    <b>Birthday:</b>?????
+                    <% else %>
                     <b> Birthday: </b> <%= @user.birthday %>
+                    <% end %>
                   </p>
                 </div>
               </fieldset>
