@@ -1,6 +1,6 @@
 # ROR-Project
 
-A dating application powered by Ruby on Rails stack.
+A dating application powered by Ruby on Rails stack and socket.io
 
 ## Getting Started
 

@@ -11,4 +11,5 @@
 /log/*
 !/log/.keep
 /tmp
+cat > .gitignore
 config/database.yml
