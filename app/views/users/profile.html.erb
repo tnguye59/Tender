@@ -19,7 +19,7 @@
           </div>
 
           <div class="panel-body z-depth-5">
-          <% if @count < 50 %>
+          <% if @count < 50 && current_user.id != @user.id %>
             <img src="/assets/question_mark.jpeg" alt="profile_pic" class="circle responsive-img profile_pic z-depth-3">
           <% else %>
           	<img src="<%= @user.avatar.url %>" alt="profile_pic" class="circle responsive-img profile_pic z-depth-3">
@@ -33,7 +33,7 @@
                 </div>
                 <div class="form-group">
                   <p>
-                  <% if @count < 30 %>
+                  <% if @count < 30 && current_user.id != @user.id  %>
                     <b>Last Name:</b>?????
                   <% else %>
                     <b>Last Name:</b> <%= @user.last_name %>
@@ -42,7 +42,7 @@
                 </div>
                 <div class="form-group">
                   <p>
-                  <% if @count < 35 %>
+                  <% if @count < 35 && current_user.id != @user.id %>
                     <b>Email:</b>?????
                   <% else %>
                     <b>Email:</b> <%= @user.email %>
@@ -51,7 +51,7 @@
                 </div>
                 <div class="form-group">
                   <p>
-                    <% if @count < 10 %>
+                    <% if @count < 10 && current_user.id != @user.id %>
                     <b>Height:</b>?????
                     <% else %>
                     <b>Height:</b> <%= @user.height %> in.
@@ -60,7 +60,7 @@
                 </div>
                 <div class="form-group">
                   <p>
-                    <% if @count < 40 %>
+                    <% if @count < 40 && current_user.id != @user.id %>
                     <b>Nationality:</b>?????
                     <% else %>
                     <b>Nationality:</b> <%= @user.nationality %>
@@ -69,7 +69,7 @@
                 </div>
                 <div class="form-group">
                   <p>
-                    <% if @count < 15 %>
+                    <% if @count < 15 && current_user.id != @user.id %>
                     <b>Gender:</b>?????
                     <% else %>
                    <b> Gender: </b> <%= @user.sex %>
@@ -78,7 +78,7 @@
                 </div>
                 <div class="form-group">
                   <p>
-                    <% if @count < 45 %>
+                    <% if @count < 45 && current_user.id != @user.id %>
                     <b>City:</b>?????
                     <% else %>
                     <b>City: </b> <%= @user.city %>
@@ -87,7 +87,7 @@
                 </div>
                 <div class="form-group">
                   <p>
-                    <% if @count < 15 %>
+                    <% if @count < 15 && current_user.id != @user.id %>
                     <b>State:</b>?????
                     <% else %>
                     <b> State: </b> <%= @user.state %>
@@ -96,7 +96,7 @@
                 </div>
                 <div class="form-group">
                   <p>
-                    <% if @count < 20 %>
+                    <% if @count < 20 && current_user.id != @user.id %>
                     <b>Birthday:</b>?????
                     <% else %>
                     <b> Birthday: </b> <%= @user.birthday %>

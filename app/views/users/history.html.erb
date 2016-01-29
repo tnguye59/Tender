@@ -1,6 +1,6 @@
 <nav class="light-blue accent-1">
 	<div class="nav-wrapper">
-	  <a href="/" class="brand-logo left">Tender</a> 
+	  <a href="/user/<%= @user.id %>" class="brand-logo left">Tender</a> 
 	  <ul id="nav-mobile" class="right">
 	    <li class="mini_pic">Signed in as: <%= @user.first_name %>
 	    </li> 
@@ -21,5 +21,5 @@
 				<a href="/restore/<%=@user.id%>/<%=m.match_id%>" class="waves-effect waves-light btn open_chat"><i class="material-icons left">chat_bubble_outline</i>Restore Match with <%= m.user.first_name %></a>
                 <a href="/permanent/<%=@user.id%>/<%=m.match_id%>" class="waves-effect red waves-light btn open_chat"><i class="material-icons left">chat_bubble_outline</i>Permanent Delete</a>
         <% end %>
-	
+    </div>
 </div>
