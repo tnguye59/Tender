@@ -6,7 +6,7 @@ class CommentsController < ApplicationController
 	end
 
 	def count
-		Message.create(match_id: params[:match_id], count: params[:count],user_id: current_user.id)
+		Message.create(matched_id: params[:match_id], count: params[:count],user_id: current_user.id)
 		render :json => { :result => true }
 	end
 end

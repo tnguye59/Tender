@@ -73,7 +73,7 @@ class UsersController < ApplicationController
 
   def profile
     @user = User.find(params[:id])
-    @count = Message.where(match_id: params[:id], user_id:current_user.id).sum(:count)
+    @count = Message.where(matched_id: params[:id], user_id:current_user.id).sum(:count)
     render 'profile'
   end
 
