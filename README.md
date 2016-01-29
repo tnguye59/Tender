@@ -9,6 +9,7 @@ A dating application powered by Ruby on Rails stack.
 ```
 rails
 postgres
+socket.io
 ```
 
 ### Installing
@@ -16,6 +17,8 @@ postgres
 ```
 bundle install
 rails s
+npm install
+server.js
 ```
 ## Built With
 
@@ -23,3 +26,6 @@ rails s
 * Ruby
 * Postgres
 * Materialize
+* Node.js
+* Socket.io
+* Express
