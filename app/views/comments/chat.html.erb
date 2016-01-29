@@ -2,16 +2,16 @@
   <div class="nav-wrapper">
     <a href="/user/<%= current_user.id %>" class="brand-logo left">Tender</a> 
     <ul id="nav-mobile" class="right hide-on-med-and-down" style="margin-left:1000px">
-      <li><a href="/user/<%= current_user.id %>">HOME</a></li>
+      <li><a href="/user/<%= current_user.id %>">DASHBOARD</a></li>
       <li><a href="/logout">LOG OUT</a></li>
     </ul>
   </div>
 </nav>
 
 
-<h4 class="font center-align">You are chatting with <span class="name"><%= @match_id.first_name %></span></h4>
+<h4 class="font center-align">You are chatting with <a href="/users/<%= @match_id.id %>/profile"><span class=name><%= @match_id.first_name %></span></a></h4>
 
-<div id="chatbox"></div>
+<div id="chatbox" class="z-depth-4"></div>
 
  <div class="row ">
     <form class="col s12" id="chat-form">
@@ -29,13 +29,16 @@
     var socket = io.connect("http://127.0.0.1:8000", {force_connection: true});
     
     socket.on("welcome", function(){
-        $("#chatbox").append($("#chat-name").val() +" has entered chatroom</p>")
+        $("#chatbox").append("<div class='chatenter'>" + $("#chat-name").val() +" has entered chatroom</div>")
     });
 
     $("#chat-form").submit(function(){
         var info = $("#textbox").val();
         var name = $("#chat-name").val();
-        var message = name + " says: " + info;
+        var date = new Date();
+        var time = date.toLocaleTimeString();
+        
+        var message = "<p><div class='chattime'>" + time + "</div>" + " " + "<div class='chatname'>" + name + "</div>" + " " + "<div class='say'> says: " + "</div> " + info + "</p>";
         socket.emit("message", {message: message})
         $("#textbox").val("");
         return false;
@@ -54,5 +57,9 @@
         $.post("/count", {count: response.messageFeed.length, match_id: match_id}, function(res){
             console.log(res.result);
         });
-    });    
+
+    });
+    socket.on("disconnected", function(){
+        $("#chatbox").append(name + " has left the chatroom");
+    })   
 </script>

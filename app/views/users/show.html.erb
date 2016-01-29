@@ -18,6 +18,7 @@ $(document).ready(function() {
 	    <li>
 	    	<img width="50" height="50" src="<%= @user.avatar.url %>" style="margin-top:7px" alt="profile_pic" class="circle">
 		</li>
+        <li><a href="/history/<%= current_user.id %>">UNLIKED MATCH</a></li>
 	    <li><a href="/logout">LOG OUT</a></li>
 	  </ul>
 	</div>
@@ -126,8 +127,6 @@ $(document).ready(function() {
 <footer class="page-footer light-blue accent-1">
   <div class="footer-copyright">
     <div class="container">
-    © 2016 Copyright Text
-    <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
     </div>
   </div>
 </footer>

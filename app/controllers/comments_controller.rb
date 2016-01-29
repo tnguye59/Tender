@@ -9,8 +9,4 @@ class CommentsController < ApplicationController
 		Message.create(match_id: params[:match_id], count: params[:count],user_id: current_user.id)
 		render :json => { :result => true }
 	end
-	# private
-	# 	def message_params
-	#       params.require(:message).permit(:message, :user_id, :match_id, :post_id)
-	#     end
 end

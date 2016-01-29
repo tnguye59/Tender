@@ -2,7 +2,10 @@
   <div class="nav-wrapper light-blue accent-1">
     <div class="col s6">
       <a href="/user/<%= current_user.id %>" class="brand-logo left">Tender</a> 
-      <a href="/users/<%= current_user.id %>/edit" style="margin-left:220px" class="breadcrumb">Back</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down" style="margin-left:1000px">
+      <li><a href="/user/<%= current_user.id %>">DASHBOARD</a></li>
+      <li><a href="/logout">LOG OUT</a></li>
+    </ul>
     </div>
   </div>
 </nav>

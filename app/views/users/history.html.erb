@@ -7,6 +7,7 @@
 	    <li>
 	    	<img width="50" height="50" src="<%= @user.avatar.url %>" style="margin-top:7px" alt="profile_pic" class="circle">
 		</li>
+		<li><a href="/user/<%= current_user.id %>">DASHBOARD</a></li>
 	    <li><a href="/logout">LOG OUT</a></li>
 	  </ul>
 	</div>
@@ -17,16 +18,8 @@
 	</div>
 	<div class="row">
 		<% @matches.each do |m| %>
-			<%= m.user.first_name %>
-				<a href="/restore/<%=@user.id%>/<%=m.match_id%>" class="waves-effect waves-light btn open_chat"><i class="material-icons left">chat_bubble_outline</i>Restore Match</a>
+				<a href="/restore/<%=@user.id%>/<%=m.match_id%>" class="waves-effect waves-light btn open_chat"><i class="material-icons left">chat_bubble_outline</i>Restore Match with <%= m.user.first_name %></a>
                 <a href="/permanent/<%=@user.id%>/<%=m.match_id%>" class="waves-effect red waves-light btn open_chat"><i class="material-icons left">chat_bubble_outline</i>Permanent Delete</a>
         <% end %>
-	<footer class="page-footer light-blue accent-1">
-	  <div class="footer-copyright">
-	    <div class="container">
-	    © 2016 Copyright Text
-	    <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
-	    </div>
-	  </div>
-	</footer>
+	
 </div>

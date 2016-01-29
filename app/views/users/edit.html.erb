@@ -2,7 +2,7 @@
   <div class="nav-wrapper">
     <a href="/user/<%= current_user.id %>" class="brand-logo left">Tender</a> 
     <ul id="nav-mobile" class="right hide-on-med-and-down" style="margin-left:1000px">
-      <li><a href="/">HOME</a></li>
+      <li><a href="/user/<%= current_user.id %>">DASHBOARD</a></li>
       <li><a href="/logout">LOG OUT</a></li>
     </ul>
   </div>
@@ -126,7 +126,7 @@
               </div>
               <input type="hidden" name="_method" value="patch">
               <br>
-              <input class="btn waves-light btn-large light-blue accent-1" type="submit" value="Edit">
+              <input class="btn waves-light btn-large light-blue accent-1" type="submit" value="Update">
               </fieldset>
             </form>
           </div>

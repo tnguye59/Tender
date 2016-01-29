@@ -43,7 +43,25 @@
     width: 600px;
     height: 300px;
     overflow: scroll;
+    padding: 10px;
+}
+.chattime{
+    color: red;
+    display: inline-block;
 }
 
+.chatname{
+    font-weight: bold;
+    color: blue;
+    display: inline-block;
+}
+.say {
+    font-weight: bold;
+    color: black;
+    display: inline-block;
+}
+.chatenter {
+    font-weight: bold;
+}
 
 
