@@ -2,7 +2,7 @@
 $(document).ready(function() {
 	
 	  $('.collapsible').collapsible({
-	  	accordion: false;
+	  	accordion: false
 	  });
 
       $('.slider').slider({full_width: true});
@@ -26,7 +26,10 @@ $(document).ready(function() {
 <div class="body_color">
 <div class="container">
     <div class="row">
-		<h1 class="left font">Welcome, <%= @user.first_name %>!</h1>
+		<p> 
+            <h1 class="left font">Welcome, <%= @user.first_name %>!</h1>
+            <a href="/history/<%= @user.id %>" class="waves-effect waves-light btn-large red accent-1 deleted_match">Deleted Matches</a>
+        </p>
 	</div>
 	<div class="row section border z-depth-4">
 
