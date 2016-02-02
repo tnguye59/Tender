@@ -4,6 +4,7 @@ class CommentsController < ApplicationController
 	def chat
 		@match_id = User.find(params[:id])
 		@messages = Message.where(user_id:current_user.id, match_id: params[:id])
+		@user = User.find(current_user.id)
 	end
 
 	def count

@@ -15,7 +15,7 @@ io.sockets.on('connection', function (socket) {
   console.log("WE ARE USING SOCKETS!");
   console.log(socket.id);
 
-  io.emit("welcome");
+  io.emit("welcome", {userId: socket.id});
   
   socket.emit("feed", {messageFeed: history})
 

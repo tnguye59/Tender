@@ -23,7 +23,7 @@ default: &default
 
 
 
-  username: jessicapeng
+  username: Tomtom 
   password: 
 
 development:
@@ -88,7 +88,7 @@ production:
   database: ror_project_production
 
 
-  username: jessicapeng
+  username: Tomtom
   password: 
 
 

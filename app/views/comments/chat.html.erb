@@ -17,7 +17,7 @@
     <form class="col s12" id="chat-form">
       <div class="row">
         <div class="input-field col s4">
-        <input type="hidden" id="chat-name" value="<%= current_user.first_name%>">
+        <input type="hidden" id="chat-name" value="<%= @user.first_name%>">
         <input type="hidden" value="<%= @match_id.id %>" id="match_id">
         <input id="textbox" class="input-filed col s12" placeholder="Enter message here" required>
         </div>
@@ -28,7 +28,7 @@
 <script type="text/javascript">
     var socket = io.connect("http://127.0.0.1:8000", {force_connection: true});
     
-    socket.on("welcome", function(){
+    socket.on("welcome", function(response){
         $("#chatbox").append("<div class='chatenter'>" + $("#chat-name").val() +" has entered chatroom</div>")
     });
 
@@ -51,7 +51,6 @@
     socket.on("feed", function(response){
         for(var i = 0; i < response.messageFeed.length; i++) {
             $("#chatbox").append("<p>" + response.messageFeed[i].message + "</p>")
-            $("#count").append(response.messageFeed.length);
         };
         var match_id = $("#match_id").val()
         $.post("/count", {count: response.messageFeed.length, match_id: match_id}, function(res){
@@ -59,7 +58,5 @@
         });
 
     });
-    socket.on("disconnected", function(){
-        $("#chatbox").append(name + " has left the chatroom");
-    })   
+ 
 </script>
