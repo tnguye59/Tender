@@ -1,0 +1,447 @@
+/* line 5, /Users/azntommyboiz/Desktop/GitHub/ror_project/app/assets/stylesheets/comments.scss */
+.chat {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* line 12, /Users/azntommyboiz/Desktop/GitHub/ror_project/app/assets/stylesheets/comments.scss */
+.chat li {
+  margin-bottom: 10px;
+  padding-bottom: 5px;
+  border-bottom: 1px dotted #B3A9A9;
+}
+
+/* line 19, /Users/azntommyboiz/Desktop/GitHub/ror_project/app/assets/stylesheets/comments.scss */
+.chat li.left .chat-body {
+  margin-left: 60px;
+}
+
+/* line 24, /Users/azntommyboiz/Desktop/GitHub/ror_project/app/assets/stylesheets/comments.scss */
+.chat li.right .chat-body {
+  margin-right: 60px;
+}
+
+/* line 30, /Users/azntommyboiz/Desktop/GitHub/ror_project/app/assets/stylesheets/comments.scss */
+.chat li .chat-body p {
+  margin: 0;
+  color: #777777;
+}
+
+/* line 36, /Users/azntommyboiz/Desktop/GitHub/ror_project/app/assets/stylesheets/comments.scss */
+.panel .slidedown .glyphicon, .chat .glyphicon {
+  margin-right: 5px;
+}
+
+/* line 41, /Users/azntommyboiz/Desktop/GitHub/ror_project/app/assets/stylesheets/comments.scss */
+#chatbox {
+  border: 1px solid black;
+  width: 600px;
+  height: 300px;
+  overflow: scroll;
+  padding: 10px;
+}
+
+/* line 48, /Users/azntommyboiz/Desktop/GitHub/ror_project/app/assets/stylesheets/comments.scss */
+.chattime {
+  color: red;
+  display: inline-block;
+}
+
+/* line 53, /Users/azntommyboiz/Desktop/GitHub/ror_project/app/assets/stylesheets/comments.scss */
+.chatname {
+  font-weight: bold;
+  color: blue;
+  display: inline-block;
+}
+
+/* line 58, /Users/azntommyboiz/Desktop/GitHub/ror_project/app/assets/stylesheets/comments.scss */
+.say {
+  font-weight: bold;
+  color: black;
+  display: inline-block;
+}
+
+/* line 63, /Users/azntommyboiz/Desktop/GitHub/ror_project/app/assets/stylesheets/comments.scss */
+.chatenter {
+  font-weight: bold;
+}
+/* line 5, /Users/azntommyboiz/Desktop/GitHub/ror_project/app/assets/stylesheets/users.scss */
+.deleted_match {
+  margin-left: 5%;
+  margin-top: 4%;
+}
+
+/* line 9, /Users/azntommyboiz/Desktop/GitHub/ror_project/app/assets/stylesheets/users.scss */
+.name {
+  color: red;
+}
+
+/* line 13, /Users/azntommyboiz/Desktop/GitHub/ror_project/app/assets/stylesheets/users.scss */
+#chatbox {
+  margin-left: 27%;
+  margin-top: 5%;
+  border: 3px ridge #404040;
+}
+
+/* line 19, /Users/azntommyboiz/Desktop/GitHub/ror_project/app/assets/stylesheets/users.scss */
+#textbox {
+  margin-left: 82%;
+}
+
+/* line 23, /Users/azntommyboiz/Desktop/GitHub/ror_project/app/assets/stylesheets/users.scss */
+.send {
+  margin-left: 26%;
+  margin-top: 2%;
+}
+
+/* line 28, /Users/azntommyboiz/Desktop/GitHub/ror_project/app/assets/stylesheets/users.scss */
+.body_color {
+  background-color: #F0F0F0;
+}
+
+/* line 31, /Users/azntommyboiz/Desktop/GitHub/ror_project/app/assets/stylesheets/users.scss */
+.card-title {
+  font-family: Nothing You Could Do;
+}
+
+/* line 35, /Users/azntommyboiz/Desktop/GitHub/ror_project/app/assets/stylesheets/users.scss */
+.mini_pic {
+  margin-right: 3px;
+}
+
+/* line 39, /Users/azntommyboiz/Desktop/GitHub/ror_project/app/assets/stylesheets/users.scss */
+.errors {
+  color: red;
+  margin-top: -7%;
+  font-weight: bold;
+}
+
+/* line 45, /Users/azntommyboiz/Desktop/GitHub/ror_project/app/assets/stylesheets/users.scss */
+.msg {
+  padding-top: 20px;
+  margin-left: 20%;
+  color: red;
+  font-weight: bold;
+}
+
+/* line 52, /Users/azntommyboiz/Desktop/GitHub/ror_project/app/assets/stylesheets/users.scss */
+.match_pic {
+  border: 3px inset #B8B8B8;
+}
+
+/* line 56, /Users/azntommyboiz/Desktop/GitHub/ror_project/app/assets/stylesheets/users.scss */
+a.hover:hover {
+  color: #e0e0e0;
+}
+
+/* line 60, /Users/azntommyboiz/Desktop/GitHub/ror_project/app/assets/stylesheets/users.scss */
+.edit_profile {
+  margin-left: 27px;
+}
+
+/* line 64, /Users/azntommyboiz/Desktop/GitHub/ror_project/app/assets/stylesheets/users.scss */
+.profile_body {
+  border-style: ridge;
+  border-width: 5px;
+}
+
+/* line 69, /Users/azntommyboiz/Desktop/GitHub/ror_project/app/assets/stylesheets/users.scss */
+.profile_pic {
+  border: 2px solid black;
+  border-style: dotted;
+}
+
+/* line 74, /Users/azntommyboiz/Desktop/GitHub/ror_project/app/assets/stylesheets/users.scss */
+.font {
+  font-family: 'Lobster', cursive;
+}
+
+/* line 78, /Users/azntommyboiz/Desktop/GitHub/ror_project/app/assets/stylesheets/users.scss */
+.first_name {
+  font-weight: bold;
+  color: #B8B8B8;
+}
+
+/* line 84, /Users/azntommyboiz/Desktop/GitHub/ror_project/app/assets/stylesheets/users.scss */
+.brand-logo.left {
+  font-family: 'Lobster', cursive;
+  font-size: 73px;
+  padding-left: 20px;
+  margin-right: 0px;
+}
+
+/* line 91, /Users/azntommyboiz/Desktop/GitHub/ror_project/app/assets/stylesheets/users.scss */
+.parallax-container {
+  height: "your height here";
+}
+
+/* line 94, /Users/azntommyboiz/Desktop/GitHub/ror_project/app/assets/stylesheets/users.scss */
+.section.white {
+  height: 640px;
+}
+
+/* line 98, /Users/azntommyboiz/Desktop/GitHub/ror_project/app/assets/stylesheets/users.scss */
+.section.white2 {
+  height: 300px;
+}
+
+/* line 102, /Users/azntommyboiz/Desktop/GitHub/ror_project/app/assets/stylesheets/users.scss */
+.header, i {
+  color: #80d8ff;
+  text-align: center;
+}
+
+/* line 106, /Users/azntommyboiz/Desktop/GitHub/ror_project/app/assets/stylesheets/users.scss */
+#button {
+  text-align: center;
+  margin-top: 18px;
+}
+
+/* line 111, /Users/azntommyboiz/Desktop/GitHub/ror_project/app/assets/stylesheets/users.scss */
+a {
+  margin-right: 30px;
+}
+
+/* line 115, /Users/azntommyboiz/Desktop/GitHub/ror_project/app/assets/stylesheets/users.scss */
+.input-group {
+  width: 320px;
+}
+
+/* line 118, /Users/azntommyboiz/Desktop/GitHub/ror_project/app/assets/stylesheets/users.scss */
+.containerRegister {
+  text-align: center;
+  height: 500px;
+}
+
+/* line 122, /Users/azntommyboiz/Desktop/GitHub/ror_project/app/assets/stylesheets/users.scss */
+.card-image img {
+  width: 170px;
+  height: 155px;
+}
+
+/* line 126, /Users/azntommyboiz/Desktop/GitHub/ror_project/app/assets/stylesheets/users.scss */
+#cardlink {
+  color: #80d8ff;
+}
+
+/* line 130, /Users/azntommyboiz/Desktop/GitHub/ror_project/app/assets/stylesheets/users.scss */
+.border {
+  border: 3px ridge #B8B8B8;
+  background-color: white;
+}
+
+/* line 135, /Users/azntommyboiz/Desktop/GitHub/ror_project/app/assets/stylesheets/users.scss */
+.center {
+  text-align: center;
+}
+
+/* line 138, /Users/azntommyboiz/Desktop/GitHub/ror_project/app/assets/stylesheets/users.scss */
+#user_photo {
+  display: inline-block;
+  text-align: center;
+  vertical-align: bottom;
+  margin-left: 4%;
+}
+
+/* line 145, /Users/azntommyboiz/Desktop/GitHub/ror_project/app/assets/stylesheets/users.scss */
+#profile_info {
+  border: none;
+  display: inline-block;
+  height: 150px;
+  text-align: center;
+  padding: 0px;
+  margin-top: 18px;
+}
+
+/* line 154, /Users/azntommyboiz/Desktop/GitHub/ror_project/app/assets/stylesheets/users.scss */
+#matches {
+  width: 600px;
+  height: 240px;
+  border: 1px solid black;
+  margin: 20px auto;
+}
+
+/* line 161, /Users/azntommyboiz/Desktop/GitHub/ror_project/app/assets/stylesheets/users.scss */
+.match {
+  display: inline-block;
+  width: 170px;
+  margin: 10px;
+  border: 1px solid black;
+}
+
+/* line 168, /Users/azntommyboiz/Desktop/GitHub/ror_project/app/assets/stylesheets/users.scss */
+.answer {
+  vertical-align: top;
+  padding-left: 20px;
+  text-align: center;
+}
+
+/* line 174, /Users/azntommyboiz/Desktop/GitHub/ror_project/app/assets/stylesheets/users.scss */
+.match_photo {
+  width: 70px;
+  height: 90%;
+  border: 1px solid black;
+  margin: 10px 0px 0px 10px;
+  display: inline-block;
+}
+
+/* line 182, /Users/azntommyboiz/Desktop/GitHub/ror_project/app/assets/stylesheets/users.scss */
+#find_a_match {
+  border: 1px solid black;
+  margin: 10px;
+  text-align: center;
+}
+
+/* line 188, /Users/azntommyboiz/Desktop/GitHub/ror_project/app/assets/stylesheets/users.scss */
+#register_button {
+  border: 1px solid black;
+  width: 200px;
+  height: 50px;
+  margin: 10px auto;
+  text-align: center;
+}
+
+/* line 196, /Users/azntommyboiz/Desktop/GitHub/ror_project/app/assets/stylesheets/users.scss */
+#match_question1, #match_question2, #match_question3 {
+  position: absolute;
+  background: white;
+  width: 30%;
+  margin: 100px 35%;
+  padding: 20px;
+  z-index: 1500;
+  display: none;
+  top: 10px;
+}
+
+/* line 207, /Users/azntommyboiz/Desktop/GitHub/ror_project/app/assets/stylesheets/users.scss */
+#match_question_background {
+  position: fixed;
+  width: 100%;
+  height: 900px;
+  top: 0;
+  left: 0;
+  background-color: #000;
+  opacity: .8;
+  z-index: 1000;
+  display: none;
+}
+
+/* line 219, /Users/azntommyboiz/Desktop/GitHub/ror_project/app/assets/stylesheets/users.scss */
+#close {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 1px solid #999;
+  text-align: center;
+  line-height: 30px;
+  font-size: 30px;
+  float: right;
+}
+
+/* line 229, /Users/azntommyboiz/Desktop/GitHub/ror_project/app/assets/stylesheets/users.scss */
+.match_card {
+  margin-top: 15px;
+}
+
+/* line 233, /Users/azntommyboiz/Desktop/GitHub/ror_project/app/assets/stylesheets/users.scss */
+.yes_vote {
+  position: absolute;
+  right: 20%;
+  bottom: .5%;
+  color: green;
+  margin: 0 auto;
+}
+
+/* line 241, /Users/azntommyboiz/Desktop/GitHub/ror_project/app/assets/stylesheets/users.scss */
+.no_vote {
+  position: absolute;
+  left: 20%;
+  bottom: .5%;
+  color: red;
+  margin: 0 auto;
+}
+
+/* line 249, /Users/azntommyboiz/Desktop/GitHub/ror_project/app/assets/stylesheets/users.scss */
+.open_chat {
+  width: 90%;
+  background-color: teal;
+  margin: 0 auto;
+  margin-left: 5%;
+  margin-bottom: 7px;
+}
+
+/* line 256, /Users/azntommyboiz/Desktop/GitHub/ror_project/app/assets/stylesheets/users.scss */
+.answer_link {
+  margin: 5px;
+}
+
+/* line 259, /Users/azntommyboiz/Desktop/GitHub/ror_project/app/assets/stylesheets/users.scss */
+.indicator-item.active {
+  background-color: #80d8ff;
+  color: #80d8ff;
+}
+
+/* line 263, /Users/azntommyboiz/Desktop/GitHub/ror_project/app/assets/stylesheets/users.scss */
+.edit_button {
+  margin: 0 auto;
+  margin-top: 2%;
+  width: 90%;
+}
+
+/* line 268, /Users/azntommyboiz/Desktop/GitHub/ror_project/app/assets/stylesheets/users.scss */
+.center_align {
+  margin: 0 auto;
+}
+
+/* line 271, /Users/azntommyboiz/Desktop/GitHub/ror_project/app/assets/stylesheets/users.scss */
+.match-links {
+  padding: 5px;
+  color: teal;
+  text-align: center;
+}
+
+/* line 276, /Users/azntommyboiz/Desktop/GitHub/ror_project/app/assets/stylesheets/users.scss */
+.match-conent {
+  padding: 5px;
+  text-align: center;
+}
+
+/* line 280, /Users/azntommyboiz/Desktop/GitHub/ror_project/app/assets/stylesheets/users.scss */
+.match-link {
+  width: 40%;
+  margin: auto;
+  display: inline-block;
+}
+
+/* line 285, /Users/azntommyboiz/Desktop/GitHub/ror_project/app/assets/stylesheets/users.scss */
+.btn-border {
+  border: 2px solid black;
+}
+
+/* line 288, /Users/azntommyboiz/Desktop/GitHub/ror_project/app/assets/stylesheets/users.scss */
+.collapsible-header {
+  line-height: 2rem;
+}
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+
+
+ */
+
+@import “materialize”;
+
+h3 {
+	color: #80d8ff;
+}
+

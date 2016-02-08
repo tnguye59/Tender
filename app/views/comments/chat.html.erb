@@ -26,7 +26,7 @@
   </div>
 
 <script type="text/javascript">
-    var socket = io.connect("http://127.0.0.1:8000", {force_connection: true});
+    var socket = io.connect("http://tenderchat.herokuapp.com", {force_connection: true});
     
     socket.on("welcome", function(response){
         $("#chatbox").append("<div class='chatenter'>" + $("#chat-name").val() +" has entered chatroom</div>")
